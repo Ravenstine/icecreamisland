@@ -1,0 +1,27 @@
+ .cell {
+    background-size: 100% 100%;
+}
+
+td {
+	background-color: blue;
+}
+
+.cell-image {
+	width: 100%;
+	height: 100%;
+}
+
+#game_board {
+	max-height: 378px;
+	max-width: 378px;
+}
+
+/* ice creams */
+
+.strawberry_sundae {
+	background-image: url('assets/images/strawberry_sundae.png');
+}
+
+.chocoloate_soft_serve {
+	background-image: url('assets/images/chocoloate_soft_serve.png');
+}
