@@ -16,10 +16,6 @@ Array.prototype.lacks = function(input){
 var Board = {
 
   init: function(){
-  	this.startLevel()
-  },
-
-  startLevel: function(){
   	var self = this
     var boardTable = $('table')
     this.generateBoardArray()
@@ -27,14 +23,8 @@ var Board = {
     this.populateBoardTable()
 
     $('#game_board').on('click', 'td', function(){
-    	// $(this).toggleClass('current')
     	self.selectCell(this)
     })
-
-  },
-
-  startGame: function(){
-  	this.startLevel()
   },
 
   generateBoardArray: function(){
@@ -72,12 +62,12 @@ var Board = {
   		var nextCellIndex = $(nextCell).index()
   		var currentRowIndex = $(currentRow).index()
    		var nextRowIndex = $(nextRow).index()
-
-  		if (this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true){
-  			$(currentCell).toggleClass('current')
-     		$(nextCell).toggleClass('current') 			
-  		}
-
+   		if (this.boardArray[nextRowIndex][nextCellIndex] != 0){
+	  		if (this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true){
+	  			$(currentCell).toggleClass('current')
+	     		$(nextCell).toggleClass('current') 			
+	  		}
+		}
   },
 
   isAdjacent: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
