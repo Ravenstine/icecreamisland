@@ -19,18 +19,43 @@
 	<script src="assets/javascripts/bootstrap.min.js"></script>
 
 	<!-- game.js -->
-	<script src="assets/javascripts/game.js"></script>
+	<script src="assets/javascripts/player.js"></script>
+	<script src="assets/javascripts/stages.js"></script>
+	<script src="assets/javascripts/board.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '251449435024323',                        // App ID from the app dashboard
+      status     : true,                                 // Check Facebook Login status
+      cookie     : true,
+      xfbml      : true                                  // Look for social plugins on the page
+    });
+
+    // Additional initialization code such as adding Event Listeners goes here
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "http://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 	<div class="container">
 		<div class="row">
 			<div id="game_board" class="col-sm-8 col-md-8">
-				<table id="game_board_table">
+				<table id="game_board_table" class="unselectable">
 				<tbody>
 					<tr>
 						<td id="0" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
