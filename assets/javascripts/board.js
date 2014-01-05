@@ -1,23 +1,8 @@
-Array.prototype.contains = function(input){
-	for (i in this) {
-		if (this[i] == input) return true;
-	}
-	return false
-}
-
-Array.prototype.lacks = function(input){
-	for (i in this) {
-		if (this[i] == input) return false;
-	}
-	return true
-}
-
 var Goal = {
 
 	init: function(){
 		var self = this
 		var goalTable = $('table#goal_board_table')
-		// this.goalArray = [[0,2,1,1,1,0],[0,1,2,2,1,2],[0,2,1,2,1,1],[0,0,2,3,1,2],[1,1,1,1,2,1],[2,2,2,1,2,1]]
 		this.goalArray = Stages[Player.stage[0]][Player.stage[1]][0]
 		this.populateGoalTable()
 		// console.log(this.goalArray)
@@ -53,7 +38,14 @@ var Board = {
 
 		$('#game_board').on('click', 'td', function(){
 			self.selectCell(this)
+			self.ifSolved()
 		})
+	},
+
+	ifSolved: function(){
+		if (this.boardArray.compare(Goal.goalArray) == true){
+			alert('you won!')
+		}
 	},
 
 	generateBoardArray: function(){
@@ -73,7 +65,7 @@ var Board = {
 			})
 			boardArray.push(newRow)
 		})
-		console.log(boardArray)
+		// console.log(boardArray)
 		// this.boardArray = [[0,2,1,1,1,0],[0,1,2,2,1,2],[0,2,1,2,1,1],[0,0,2,1,1,2],[1,1,1,1,2,1],[2,2,2,1,2,1]]
 		this.boardArray = boardArray
 	},
