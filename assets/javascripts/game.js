@@ -13,10 +13,31 @@ Array.prototype.lacks = function(input){
 }
 
 var Goal = {
+
 	init: function(){
-		this.goalArray = [[0,2,1,1,1,0],[0,1,2,2,1,2],[0,2,1,2,1,1],[0,0,2,1,1,2],[1,1,1,1,2,1],[2,2,2,1,2,1]]
-	}
+		var self = this
+		var goalTable = $('table#goal_board_table')
+		this.goalArray = [[0,2,1,1,1,0],[0,1,2,2,1,2],[0,2,1,2,1,1],[0,0,2,3,1,2],[1,1,1,1,2,1],[2,2,2,1,2,1]]
+		this.populateGoalTable()
+	},
+
+	  populateGoalTable: function(){
+	  	var self = this
+	  	var simpleGoalArray = [];
+		simpleGoalArray = simpleGoalArray.concat.apply(simpleGoalArray, self.goalArray)
+	  	$(simpleGoalArray).each(function(cellIndex, cell){
+	  		$($('table#goal_board_table td')[cellIndex]).addClass("demo")
+		  	$($('table#goal_board_table td')[cellIndex]).addClass("i" + cell.toString())
+	  	})
+	  }
+
 }
+
+
+
+
+
+
 
 
 var Board = {
@@ -126,4 +147,5 @@ var Board = {
 
 $(document).ready(function(){
   Board.init()
+  Goal.init()
 })

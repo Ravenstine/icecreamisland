@@ -6,15 +6,35 @@ td {
 	background-color: blue;
 }
 
+.container {
+	background-color: green;
+}
+
 .cell-image {
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
 }
 
-#game_board {
+#game_board,#goal_board {
 	max-height: 378px;
 	max-width: 378px;
+}
+
+.col-md-4 #goal_board_table {
+	/*margin: 0 auto;*/
+}
+
+#game_board_table {
+	max-height: 378px;
+	max-width: 378px;
+}
+
+#goal_board_table {
+/*	max-height: 250px;
+	max-width: 250px;*/
+	max-height: 50%;
+	max-width: 50%;
 }
 
 .current img {
