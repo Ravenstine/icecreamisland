@@ -17,26 +17,24 @@ td {
 	max-width: 378px;
 }
 
-.current {
+.current img {
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(198, 255, 0, 1);
 	-moz-box-shadow:    0px 0px 5px 0px rgba(198, 255, 0, 1);
 	box-shadow:         0px 0px 5px 0px rgba(198, 255, 0, 1);
 }
 
-/* ice creams */
+/* ICE CREAMS */
 
-.strawberry_sundae {
+/* demo */
+
+
+
+.demo.i1 {
+	/* strawberry sundae */
 	background-image: url('assets/images/strawberry_sundae.png');
 }
 
-.chocoloate_soft_serve {
-	background-image: url('assets/images/chocolate_soft_serve.png');
-}
-
-.basic1 {
-	background-image: url('assets/images/strawberry_sundae.png');
-}
-
-.basic2 {
+.demo.i2{
+	/* chocolate soft serve */
 	background-image: url('assets/images/chocolate_soft_serve.png');
 }
