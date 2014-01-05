@@ -12,12 +12,18 @@ Array.prototype.lacks = function(input){
 	return true
 }
 
+var Goal = {
+	init: function(){
+		this.goalArray = [[0,2,1,1,1,0],[0,1,2,2,1,2],[0,2,1,2,1,1],[0,0,2,1,1,2],[1,1,1,1,2,1],[2,2,2,1,2,1]]
+	}
+}
+
 
 var Board = {
 
   init: function(){
   	var self = this
-    var boardTable = $('table')
+    var boardTable = $('table#game_board_table')
     this.generateBoardArray()
     this.boardTableArray()
     this.populateBoardTable()
@@ -36,15 +42,15 @@ var Board = {
   	var simpleBoardArray = [];
 	simpleBoardArray = simpleBoardArray.concat.apply(simpleBoardArray, self.boardArray)
   	$(simpleBoardArray).each(function(cellIndex, cell){
-  		$($('td')[cellIndex]).addClass("demo")
-	  	$($('td')[cellIndex]).addClass("i" + cell.toString())
+  		$($('table#game_board_table td')[cellIndex]).addClass("demo")
+	  	$($('table#game_board_table td')[cellIndex]).addClass("i" + cell.toString())
   	})
   },
 
   boardTableArray: function(){
   	var self = this
   	var outputArray = []
-  	$('table tr').each(function(rowIndex, row){
+  	$('table#game_board_table tr').each(function(rowIndex, row){
   		var rowArray = []
   		$($(row).find('td')).each(function(cellIndex, cell){
   			rowArray.push(cell)
@@ -55,8 +61,8 @@ var Board = {
   },
 
   selectCell: function(nextCell){
-  		var currentCell = $('table').find('.current')
-   		var currentRow = $('table').find('.current').parent()
+  		var currentCell = $('table#game_board_table').find('.current')
+   		var currentRow = $('table#game_board_table').find('.current').parent()
    		var nextRow = $(nextCell).parent()
   		var currentCellIndex = currentCell.index()
   		var nextCellIndex = $(nextCell).index()
