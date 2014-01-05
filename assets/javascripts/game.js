@@ -62,12 +62,44 @@ var Board = {
   		var nextCellIndex = $(nextCell).index()
   		var currentRowIndex = $(currentRow).index()
    		var nextRowIndex = $(nextRow).index()
+
    		if (this.boardArray[nextRowIndex][nextCellIndex] != 0){
 	  		if (this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true){
+	  			
+	  			var newCellValue = this.calculateNewCellValue(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex)
+	  			this.toggleCellValue(newCellValue, nextCell)
+	  			this.boardArray[nextRowIndex][nextCellIndex] = newCellValue
 	  			$(currentCell).toggleClass('current')
-	     		$(nextCell).toggleClass('current') 			
+	     		$(nextCell).toggleClass('current') 	
+	     		console.log(this.boardArray)		
 	  		}
 		}
+
+  },
+
+  toggleCellValue: function(newCellValue, nextCell){
+  	$(nextCell).removeClass('i1 i2 i3')
+  	$(nextCell).addClass("i" + newCellValue)
+
+  },
+
+  calculateNewCellValue: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
+  	var lastCell = this.boardArray[currentRowIndex][currentCellIndex]
+  	var nextCell = this.boardArray[nextRowIndex][nextCellIndex]
+  	var newValue
+
+  	if (lastCell == nextCell) {
+  		newValue = lastCell
+  	} else if (lastCell + nextCell == 3){
+  		newValue = 3
+  	} else if (lastCell + nextCell == 4){
+  		newValue = 2
+  	} else if (lastCell + nextCell == 5){
+  		newValue = 1
+  	}
+
+  	return newValue
+
   },
 
   isAdjacent: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
