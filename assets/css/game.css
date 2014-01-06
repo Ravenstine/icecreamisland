@@ -3,11 +3,12 @@
 }
 
 td {
-	background-color: blue;
+	/*background-color: blue;*/
+	background-color: rgba(255, 255, 255, 0.5)
 }
 
 .container {
-	background-color: green;
+	/*background-color: green;*/
 }
 
 .cell-image {
@@ -25,9 +26,29 @@ td {
 	/*margin: 0 auto;*/
 }
 
+
 #game_board_table {
 	max-height: 378px;
 	max-width: 378px;
+}
+
+@media only screen 
+and (min-width : 768px) {
+/* Styles */
+
+	#goal_board_table {
+		max-height: 100% !important;
+		max-width: 100% !important;
+			float: left;
+	}
+
+	#sidebar_info {
+	height: 100% !important;
+	width: 100% !important;
+	background-color: rgba(255, 255, 255, 0.5)
+
+}
+
 }
 
 #goal_board_table {
@@ -35,6 +56,16 @@ td {
 	max-width: 250px;*/
 	max-height: 50%;
 	max-width: 50%;
+		float: left;
+}
+
+#sidebar_info {
+/*	max-height: 250px;
+	max-width: 250px;*/
+	height: 50%;
+	width: 50%;
+	background-color: rgba(255, 255, 255, 0.5)
+
 }
 
 .current img {
@@ -55,6 +86,10 @@ td {
    */
    -ms-user-select: none;
    user-select: none;
+}
+
+body {
+	background-image: url('assets/images/demo.jpg');
 }
 
 

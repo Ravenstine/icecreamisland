@@ -30,34 +30,34 @@
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
+	<div id="fb-root"></div>
+	<script>
+		window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
       appId      : '251449435024323',                        // App ID from the app dashboard
       status     : true,                                 // Check Facebook Login status
       cookie     : true,
       xfbml      : true                                  // Look for social plugins on the page
-    });
+  });
 
     // Additional initialization code such as adding Event Listeners goes here
-  };
+};
 
   // Load the SDK asynchronously
   (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "http://connect.facebook.net/en_US/all.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+  	var js, fjs = d.getElementsByTagName(s)[0];
+  	if (d.getElementById(id)) {return;}
+  	js = d.createElement(s); js.id = id;
+  	js.src = "http://connect.facebook.net/en_US/all.js";
+  	fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 </script>
 
-	<div class="container">
-		<div class="row">
-			<div id="game_board" class="col-sm-8 col-md-8">
-				<table id="game_board_table" class="unselectable">
+<div class="container">
+	<div class="row">
+		<div id="game_board" class="col-sm-8 col-md-8">
+			<table id="game_board_table" class="unselectable">
 				<tbody>
 					<tr>
 						<td id="0" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
@@ -107,14 +107,14 @@
 						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
 						<td class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
 					</tr>
-					</tbody>
-				</table>
-			</div>
+				</tbody>
+			</table>
+		</div>
 
-			<div id="goal_board" class="col-sm-4 col-md-4">
-				
+		<div id="goal_board" class="col-sm-5 col-md-5">
 
-				<table id="goal_board_table">
+
+			<table id="goal_board_table">
 				<tbody>
 					<tr>
 						<td id="0" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
@@ -164,13 +164,18 @@
 						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
 						<td class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
 					</tr>
-					</tbody>
-				</table>
+				</tbody>
+			</table>
 
-<span id="timer"></span>
+		<table id="sidebar_info">
+		<tr><td><span id="timer">&nbsp;</span></td><tr>
+		<tr><td><span id="">&nbsp;</span></td><tr>
+		<tr><td><span id="">&nbsp;</span></td><tr>
+		<tr><td><span id="">&nbsp;</span></td><tr>
+		<tr><td><span id="">&nbsp;</span></td><tr>
+		<tr><td><span id="">&nbsp;</span></td><tr>
 
-
-
+		</table>
 
 		</div>
 	</div>
