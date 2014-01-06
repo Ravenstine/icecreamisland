@@ -7,7 +7,3 @@ var Player = {
 	}
 
 }
-
-$(document).ready(function(){
-	Player.init()
-})

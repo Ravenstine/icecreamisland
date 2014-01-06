@@ -3,8 +3,19 @@ var Goal = {
 	init: function(){
 		var self = this
 		var goalTable = $('table#goal_board_table')
-		this.goalArray = Stages[Player.stage].board[Player.level]
+		this.clearGoal()
+		this.goalArray = Stages[Player.stage].levels[Player.level].board[0]
 		this.populateGoalTable()
+	},
+
+
+	clearGoal: function(){
+		var self = this
+		var simpleGoalArray = [];
+		simpleGoalArray = simpleGoalArray.concat.apply(simpleGoalArray, self.goalArray)
+		$(simpleGoalArray).each(function(cellIndex, cell){
+			$($('table#goal_board_table td')[cellIndex]).removeClass("demo i1 i2 i3")
+		})
 	},
 
 	populateGoalTable: function(){
@@ -20,19 +31,49 @@ var Goal = {
 }
 
 
-
 var Board = {
 
 	init: function(){
 		var self = this
 		var boardTable = $('table#game_board_table')
+		this.clearBoard()
 		this.generateBoardArray()
 		this.boardTableArray()
 		this.populateBoardTable()
+		this.time = Stages[Player.stage].levels[Player.level].time
 
 		$('#game_board').on('click', 'td', function(){
 			self.selectCell(this)
 			self.ifSolved()
+		})
+	},
+
+	countdown: function(){
+		var self = this
+		var boardTime = this.time
+		var counter=setInterval(timer, 1000) //1000 will  run it every 1 second
+		function timer()
+		{
+		  boardTime= (boardTime) - 1
+		  console.log(boardTime)
+		  if (boardTime < 0)
+		  {
+		     clearInterval(counter)
+		     self.init()
+		     return
+		  }
+
+		 document.getElementById("timer").innerHTML=boardTime + " secs" // watch for spelling
+		}
+
+	},
+
+	clearBoard: function(){
+		var self = this
+		var simpleBoardArray = [];
+		simpleBoardArray = simpleBoardArray.concat.apply(simpleBoardArray, self.boardArray)
+		$(simpleBoardArray).each(function(cellIndex, cell){
+			$($('table#game_board_table td')[cellIndex]).removeClass("demo i1 i2 i3")
 		})
 	},
 
@@ -43,9 +84,10 @@ var Board = {
 	},
 
 	generateBoardArray: function(){
-		var goalArray = Stages[Player.stage].board[Player.level]
-		var stageMap = Stages[Player.stage].map[Player.level]
+		var goalArray = Stages[Player.stage].levels[Player.level].board[0]
+		var stageMap = Stages[Player.stage].levels[Player.level].map[0]
 		var boardArray = []
+		console.log(goalArray)
 
 		$(goalArray).each(function(rowIndex, row){
 			var newRow = []
@@ -148,7 +190,3 @@ var Board = {
 
 	}
 
-	$(document).ready(function(){
-		Board.init()
-		Goal.init()
-	})
