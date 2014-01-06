@@ -3,9 +3,8 @@ var Goal = {
 	init: function(){
 		var self = this
 		var goalTable = $('table#goal_board_table')
-		this.goalArray = Stages[Player.stage[0]][Player.stage[1]][0]
+		this.goalArray = Stages[Player.stage].board[Player.level]
 		this.populateGoalTable()
-		// console.log(this.goalArray)
 	},
 
 	populateGoalTable: function(){
@@ -19,11 +18,6 @@ var Goal = {
 	}
 
 }
-
-
-
-
-
 
 
 
@@ -49,8 +43,8 @@ var Board = {
 	},
 
 	generateBoardArray: function(){
-		var goalArray = Stages[Player.stage[0]][Player.stage[1]][0]
-		var stageMap = Stages[Player.stage[0]][Player.stage[1]][1]
+		var goalArray = Stages[Player.stage].board[Player.level]
+		var stageMap = Stages[Player.stage].map[Player.level]
 		var boardArray = []
 
 		$(goalArray).each(function(rowIndex, row){
@@ -65,8 +59,6 @@ var Board = {
 			})
 			boardArray.push(newRow)
 		})
-		// console.log(boardArray)
-		// this.boardArray = [[0,2,1,1,1,0],[0,1,2,2,1,2],[0,2,1,2,1,1],[0,0,2,1,1,2],[1,1,1,1,2,1],[2,2,2,1,2,1]]
 		this.boardArray = boardArray
 	},
 
@@ -109,8 +101,7 @@ var Board = {
 				this.toggleCellValue(newCellValue, nextCell)
 				this.boardArray[nextRowIndex][nextCellIndex] = newCellValue
 				$(currentCell).toggleClass('current')
-				$(nextCell).toggleClass('current') 	
-	     		// console.log(this.boardArray)		
+				$(nextCell).toggleClass('current') 			
 	     	}
 	     }
 
