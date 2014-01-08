@@ -6,6 +6,44 @@ var Goal = {
 		this.clearGoal()
 		this.goalArray = Stages[Player.stage].levels[Player.level].board[0]
 		this.populateGoalTable()
+
+		this.fitToScreen()
+
+		$(window).on('resize', function(){
+			self.fitToScreen()
+		})
+	},
+
+	fitToScreen: function(){
+		var windowHeight = Math.round($(window).height() * 0.5)
+		var windowWidth = Math.round($(window).width() * 0.5)
+		var gameBoardTableWidth = $('#game_board_table').width()
+		var margin = Math.round((windowWidth - gameBoardTableWidth) / 2)
+
+		if (windowHeight < windowWidth){
+			var aspectRatio = 1
+
+			var height = Math.round(windowWidth / aspectRatio)
+			var width = Math.round(windowHeight / aspectRatio)
+
+			$('#goal_board_table').css('height', windowHeight + "px")
+			$('#goal_board_table').css('width', width + "px")
+
+
+		} else if (windowHeight > windowWidth) {
+			var aspectRatio = 1
+
+			var height = Math.round(windowWidth / aspectRatio)
+			var width = Math.round(windowHeight / aspectRatio)
+
+			$('#goal_board_table').css('height', height + "px")
+			$('#goal_board_table').css('width', windowWidth + "px")
+
+		}
+
+		// $('#goal_board_table').css('margin-left', margin + "px")
+
+
 	},
 
 
@@ -42,7 +80,13 @@ var Board = {
 		this.populateBoardTable()
 		this.time = Stages[Player.stage].levels[Player.level].time
 
-		$('#game_board').on('click', 'td', function(){
+		this.fitToScreen()
+
+		$(window).on('resize', function(){
+			self.fitToScreen()
+		})
+
+		$('#game_board_table').on('click', 'td', function(){
 			self.selectCell(this)
 			self.ifSolved()
 		})
@@ -54,16 +98,43 @@ var Board = {
 		var counter=setInterval(timer, 1000) //1000 will  run it every 1 second
 		function timer()
 		{
-		  boardTime= (boardTime) - 1
-		  console.log(boardTime)
-		  if (boardTime < 0)
-		  {
-		     clearInterval(counter)
-		     self.init()
-		     return
-		  }
+			boardTime= (boardTime) - 1
+			console.log(boardTime)
+			if (boardTime < 0)
+			{
+				clearInterval(counter)
+				self.init()
+				return
+			}
 
 		 document.getElementById("timer").innerHTML=boardTime + " secs" // watch for spelling
+		}
+
+	},
+
+	fitToScreen: function(){
+		var windowHeight = $(window).height()
+		var windowWidth = $(window).width()
+
+		if (windowHeight < windowWidth){
+			var aspectRatio = 1
+
+			var height = Math.round(windowWidth / aspectRatio)
+			var width = Math.round(windowHeight / aspectRatio)
+
+			$('#game_board_table').css('height', windowHeight + "px")
+			$('#game_board_table').css('width', width + "px")
+
+
+		} else if (windowHeight > windowWidth) {
+			var aspectRatio = 1
+
+			var height = Math.round(windowWidth / aspectRatio)
+			var width = Math.round(windowHeight / aspectRatio)
+
+			$('#game_board_table').css('height', height + "px")
+			$('#game_board_table').css('width', windowWidth + "px")
+
 		}
 
 	},
@@ -144,49 +215,49 @@ var Board = {
 				this.boardArray[nextRowIndex][nextCellIndex] = newCellValue
 				$(currentCell).toggleClass('current')
 				$(nextCell).toggleClass('current') 			
-	     	}
-	     }
+			}
+		}
 
-	 },
+	},
 
-	 toggleCellValue: function(newCellValue, nextCell){
-	 	$(nextCell).removeClass('i1 i2 i3')
-	 	$(nextCell).addClass("i" + newCellValue)
+	toggleCellValue: function(newCellValue, nextCell){
+		$(nextCell).removeClass('i1 i2 i3')
+		$(nextCell).addClass("i" + newCellValue)
 
-	 },
+	},
 
-	 calculateNewCellValue: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
-	 	var lastCell = this.boardArray[currentRowIndex][currentCellIndex]
-	 	var nextCell = this.boardArray[nextRowIndex][nextCellIndex]
-	 	var newValue
+	calculateNewCellValue: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
+		var lastCell = this.boardArray[currentRowIndex][currentCellIndex]
+		var nextCell = this.boardArray[nextRowIndex][nextCellIndex]
+		var newValue
 
-	 	if (lastCell == nextCell) {
-	 		newValue = lastCell
-	 	} else if (lastCell + nextCell == 3){
-	 		newValue = 3
-	 	} else if (lastCell + nextCell == 4){
-	 		newValue = 2
-	 	} else if (lastCell + nextCell == 5){
-	 		newValue = 1
-	 	}
+		if (lastCell == nextCell) {
+			newValue = lastCell
+		} else if (lastCell + nextCell == 3){
+			newValue = 3
+		} else if (lastCell + nextCell == 4){
+			newValue = 2
+		} else if (lastCell + nextCell == 5){
+			newValue = 1
+		}
 
-	 	return newValue
+		return newValue
 
-	 },
+	},
 
-	 isAdjacent: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
-	 	if (nextRowIndex == currentRowIndex+1 || nextRowIndex == currentRowIndex-1){
-	 		if (nextCellIndex == currentCellIndex ){
-	 			return true
-	 		}
-	 	} else if (nextRowIndex == currentRowIndex) {
-	 		if (nextCellIndex == currentCellIndex+1 || nextCellIndex == currentCellIndex-1 ){
-	 			return true
-	 		}
-	 	} else {
-	 		return false
-	 	}
-	 }
-
+	isAdjacent: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
+		if (nextRowIndex == currentRowIndex+1 || nextRowIndex == currentRowIndex-1){
+			if (nextCellIndex == currentCellIndex ){
+				return true
+			}
+		} else if (nextRowIndex == currentRowIndex) {
+			if (nextCellIndex == currentCellIndex+1 || nextCellIndex == currentCellIndex-1 ){
+				return true
+			}
+		} else {
+			return false
+		}
 	}
+
+}
 
