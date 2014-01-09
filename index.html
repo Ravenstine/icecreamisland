@@ -30,167 +30,169 @@
 </head>
 
 <body>
-	<div id="fb-root"></div>
-	<script>
-		window.fbAsyncInit = function() {
-    // init the FB JS SDK
-    FB.init({
-      appId      : '251449435024323',                        // App ID from the app dashboard
-      status     : true,                                 // Check Facebook Login status
-      cookie     : true,
-      xfbml      : true                                  // Look for social plugins on the page
-  });
-
-    // Additional initialization code such as adding Event Listeners goes here
-};
-
-  // Load the SDK asynchronously
-  (function(d, s, id){
-  	var js, fjs = d.getElementsByTagName(s)[0];
-  	if (d.getElementById(id)) {return;}
-  	js = d.createElement(s); js.id = id;
-  	js.src = "http://connect.facebook.net/en_US/all.js";
-  	fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
 
 
-<div class="tab-content">
 
 
-<div id="landing" class="container tab-pane active">
-	<div class="row">
-		<div class="col-sm-2 col-md-2">
+	<div class="tab-content">
 
+
+		<div id="landing" class="container tab-pane active">
+			<div class="row">
+				<div class="col-sm-2 col-md-2">
+
+				</div>
+
+				<div class="col-sm-8 col-md-8">
+
+					<p>Ice Cream Island</p>
+					<p><a href="#game" data-toggle="tab">Play</a></p>
+					
+				</div>
+
+				<div class="col-sm-2 col-md-2">
+
+				</div>
+			</div>
 		</div>
 
-		<div class="col-sm-8 col-md-8">
-
-		<p>Ice Cream Island</p>
-		<p><a href="#game" data-toggle="tab">Play</a></p>
-		
-		</div>
-
-		<div class="col-sm-2 col-md-2">
-
-		</div>
-	</div>
-</div>
 
 
-
-<div id="game" class="tab-pane">
-			<table id="game_board_table" class="unselectable">
-				<tbody>
-					<tr>
-						<td id="0" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="1" class="cell current"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="2" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="3" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="4" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="5" class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-				</tbody>
-			</table>
+		<div id="game" class="tab-pane">
 
 
 
 
-			<table id="goal_board_table">
-				<tbody>
-					<tr>
-						<td id="0" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="1" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="2" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="3" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="4" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td id="5" class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-					<tr>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-						<td class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
-					</tr>
-				</tbody>
-			</table>
 
-		<table id="sidebar_info">
+
+			<div id="goal_board">
+				<table id="goal_board_table">
+					<tbody>
+						<tr>
+							<td id="0" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="1" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="2" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="3" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="4" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="5" class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+					</tbody>
+				</table> 
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div id="game_board">
+				<table id="game_board_table" class="unselectable">
+					<tbody>
+						<tr>
+							<td id="0" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="1" class="cell current"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="2" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="3" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="4" class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td id="5" class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+						<tr>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+							<td class="cell strawberry_sundae"><img src="assets/images/blank.png" class="img-responsive cell-image" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+
+<!-- 		<table id="sidebar_info">
 		<tr><td><span id="timer">&nbsp;</span></td><tr>
 		<tr><td><span id="">&nbsp;</span></td></tr>
 		<tr><td><span id="">&nbsp;</span></td></tr>
@@ -198,11 +200,11 @@
 		<tr><td><span id="">&nbsp;</span></td></tr>
 		<tr><td><span id="">&nbsp;</span></td></tr>
 
-		</table>
+	</table> -->
 
 
 
-	</div>
+</div>
 
 </body>
 

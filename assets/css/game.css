@@ -13,8 +13,10 @@
 	max-width: 378px;
 }*/
 
-
-
+#game {
+	background-color: green;
+	margin: 0 auto;
+}
 
 #game_board_table {
 	position: relative;
@@ -44,9 +46,7 @@
 	box-shadow:         0px 0px 5px 0px rgba(198, 255, 0, 1);
 }
 
-tbody {
-		background-color: rgba(255, 255, 255, 0.5)
-}
+
 
 .unselectable {
    -moz-user-select: none;
@@ -72,6 +72,18 @@ tbody {
 
 /* demo */
 
+#game_board {
+		background-color: rgba(255, 255, 255, 0.5);
+		display: inline-block;
+		padding: 2%;
+		float: right;
+}
+
+#goal_board {
+		background-color: rgba(255, 255, 255, 0.5);
+		display: inline-block;
+		padding: 1%;
+}
 
 
 .demo.i1 {

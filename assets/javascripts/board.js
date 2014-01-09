@@ -6,43 +6,38 @@ var Goal = {
 		this.clearGoal()
 		this.goalArray = Stages[Player.stage].levels[Player.level].board[0]
 		this.populateGoalTable()
-
-		this.fitToScreen()
-
-		$(window).on('resize', function(){
-			self.fitToScreen()
-		})
 	},
 
 	fitToScreen: function(){
-		var windowHeight = Math.round($(window).height() * 0.5)
-		var windowWidth = Math.round($(window).width() * 0.5)
-		var gameBoardTableWidth = $('#game_board_table').width()
-		var margin = Math.round((windowWidth - gameBoardTableWidth) / 2)
+		// var windowHeight = Math.round($('#game').height() * 0.5)
+		// var windowWidth = Math.round($('#game').width() * 0.5)
+		// var gameBoardTableWidth = $('#game_board_table').width()
+		// var gameBoardTableHeight = $('#game_board_table').height()
+		// var margin = Math.round((windowWidth - gameBoardTableWidth) / 2)
 
-		if (windowHeight < windowWidth){
-			var aspectRatio = 1
+		// if (windowHeight < windowWidth) {
+		// 	var aspectRatio = 1
 
-			var height = Math.round(windowWidth / aspectRatio)
-			var width = Math.round(windowHeight / aspectRatio)
+		// 	var height = Math.round(windowWidth / aspectRatio)
+		// 	var width = Math.round(windowHeight / aspectRatio)
 
-			$('#goal_board_table').css('height', windowHeight + "px")
-			$('#goal_board_table').css('width', width + "px")
+		// 	$('#goal_board_table').css('height', windowHeight + "px")
+		// 	$('#goal_board_table').css('width', width + "px")
 
 
-		} else if (windowHeight > windowWidth) {
-			var aspectRatio = 1
+		// } else if (windowHeight > windowWidth) {
+		// 	var aspectRatio = 1
 
-			var height = Math.round(windowWidth / aspectRatio)
-			var width = Math.round(windowHeight / aspectRatio)
+		// 	var height = Math.round(windowWidth - gameBoardTableWidth / aspectRatio)
+		// 	var width = Math.round(windowHeight - gameBoardTableHeight / aspectRatio)
 
-			$('#goal_board_table').css('height', height + "px")
-			$('#goal_board_table').css('width', windowWidth + "px")
+		// 	$('#goal_board_table').css('height', height + "px")
+		// 	$('#goal_board_table').css('width', windowWidth + "px")
 
-		}
+		// }
 
-		// $('#goal_board_table').css('margin-left', margin + "px")
-
+			// $('#goal_board_table').css('height', windowHeight + "px")
+			$('#goal_board_table').css('width', "100%")
 
 	},
 
@@ -80,12 +75,6 @@ var Board = {
 		this.populateBoardTable()
 		this.time = Stages[Player.stage].levels[Player.level].time
 
-		this.fitToScreen()
-
-		$(window).on('resize', function(){
-			self.fitToScreen()
-		})
-
 		$('#game_board_table').on('click', 'td', function(){
 			self.selectCell(this)
 			self.ifSolved()
@@ -113,29 +102,31 @@ var Board = {
 	},
 
 	fitToScreen: function(){
-		var windowHeight = $(window).height()
-		var windowWidth = $(window).width()
+		// var windowHeight = $('#game').height()
+		// var windowWidth = $('#game').width()
 
-		if (windowHeight < windowWidth){
-			var aspectRatio = 1
+		// if (windowHeight < windowWidth){
+		// 	var aspectRatio = 1
 
-			var height = Math.round(windowWidth / aspectRatio)
-			var width = Math.round(windowHeight / aspectRatio)
+		// 	var height = Math.round(windowWidth / aspectRatio)
+		// 	var width = Math.round(windowHeight / aspectRatio)
 
-			$('#game_board_table').css('height', windowHeight + "px")
-			$('#game_board_table').css('width', width + "px")
+		// 	$('#game_board_table').css('height', windowHeight + "px")
+		// 	$('#game_board_table').css('width', width + "px")
 
 
-		} else if (windowHeight > windowWidth) {
-			var aspectRatio = 1
+		// } else if (windowHeight > windowWidth) {
+		// 	var aspectRatio = 1
 
-			var height = Math.round(windowWidth / aspectRatio)
-			var width = Math.round(windowHeight / aspectRatio)
+		// 	var height = Math.round(windowWidth / aspectRatio)
+		// 	var width = Math.round(windowHeight / aspectRatio)
 
-			$('#game_board_table').css('height', height + "px")
-			$('#game_board_table').css('width', windowWidth + "px")
+		// 	$('#game_board_table').css('height', height + "px")
+		// 	$('#game_board_table').css('width', windowWidth + "px")
 
-		}
+		// }
+
+		// $('#game_board_table').css('width', "100%")
 
 	},
 
