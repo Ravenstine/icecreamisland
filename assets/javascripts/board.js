@@ -8,40 +8,6 @@ var Goal = {
 		this.populateGoalTable()
 	},
 
-	fitToScreen: function(){
-		// var windowHeight = Math.round($('#game').height() * 0.5)
-		// var windowWidth = Math.round($('#game').width() * 0.5)
-		// var gameBoardTableWidth = $('#game_board_table').width()
-		// var gameBoardTableHeight = $('#game_board_table').height()
-		// var margin = Math.round((windowWidth - gameBoardTableWidth) / 2)
-
-		// if (windowHeight < windowWidth) {
-		// 	var aspectRatio = 1
-
-		// 	var height = Math.round(windowWidth / aspectRatio)
-		// 	var width = Math.round(windowHeight / aspectRatio)
-
-		// 	$('#goal_board_table').css('height', windowHeight + "px")
-		// 	$('#goal_board_table').css('width', width + "px")
-
-
-		// } else if (windowHeight > windowWidth) {
-		// 	var aspectRatio = 1
-
-		// 	var height = Math.round(windowWidth - gameBoardTableWidth / aspectRatio)
-		// 	var width = Math.round(windowHeight - gameBoardTableHeight / aspectRatio)
-
-		// 	$('#goal_board_table').css('height', height + "px")
-		// 	$('#goal_board_table').css('width', windowWidth + "px")
-
-		// }
-
-			// $('#goal_board_table').css('height', windowHeight + "px")
-			$('#goal_board_table').css('width', "100%")
-
-	},
-
-
 	clearGoal: function(){
 		var self = this
 		var simpleGoalArray = [];
@@ -101,34 +67,6 @@ var Board = {
 
 	},
 
-	fitToScreen: function(){
-		// var windowHeight = $('#game').height()
-		// var windowWidth = $('#game').width()
-
-		// if (windowHeight < windowWidth){
-		// 	var aspectRatio = 1
-
-		// 	var height = Math.round(windowWidth / aspectRatio)
-		// 	var width = Math.round(windowHeight / aspectRatio)
-
-		// 	$('#game_board_table').css('height', windowHeight + "px")
-		// 	$('#game_board_table').css('width', width + "px")
-
-
-		// } else if (windowHeight > windowWidth) {
-		// 	var aspectRatio = 1
-
-		// 	var height = Math.round(windowWidth / aspectRatio)
-		// 	var width = Math.round(windowHeight / aspectRatio)
-
-		// 	$('#game_board_table').css('height', height + "px")
-		// 	$('#game_board_table').css('width', windowWidth + "px")
-
-		// }
-
-		// $('#game_board_table').css('width', "100%")
-
-	},
 
 	clearBoard: function(){
 		var self = this
@@ -214,7 +152,6 @@ var Board = {
 	toggleCellValue: function(newCellValue, nextCell){
 		$(nextCell).removeClass('i1 i2 i3')
 		$(nextCell).addClass("i" + newCellValue)
-
 	},
 
 	calculateNewCellValue: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){

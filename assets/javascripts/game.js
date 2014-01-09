@@ -6,12 +6,8 @@ var Game = {
 		Board.init()
 		Goal.init()
 		self.fitToScreen()
-		// Board.fitToScreen()
-		// Goal.fitToScreen()
 		$(window).on('resize', function(){
 			self.fitToScreen()
-			// Board.fitToScreen()
-			// Goal.fitToScreen()
 		})
 	},
 
@@ -33,8 +29,11 @@ var Game = {
 				height = windowHeight
 			}
 
-		$('#game_board').css('width', '66%')
+		$('#game_board').css('width', '65%')
 		$('#goal_board').css('width', '33%')
+		$('#info_box').css('width', '33%')
+		$('#info_box').css('height', '47.8%')
+
 
 		} else if (windowHeight > windowWidth) {
 
@@ -51,6 +50,8 @@ var Game = {
 
 			$('#game_board').css('width', '100%')
 			$('#goal_board').css('width', '45%')
+			$('#info_box').css('width', '51%')
+			$('#info_box').css('height', '31%')
 		}
 
 		div.css('height', height + "px")

@@ -85,6 +85,12 @@
 		padding: 1%;
 }
 
+#info_box {
+		background-color: rgba(255, 255, 255, 0.5);
+		display: inline-block;
+		padding: 1%;
+}
+
 
 .demo.i1 {
 	/* strawberry sundae */
