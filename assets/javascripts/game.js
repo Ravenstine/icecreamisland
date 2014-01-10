@@ -17,7 +17,7 @@ var Game = {
 		var div = $('#game')
 
 		if (windowHeight < windowWidth){
-
+			/* if widescreen */
 			var aspectRatio = 3/2
 			var height = Math.round(windowWidth / aspectRatio)
 			var width = Math.round((windowHeight * aspectRatio))
@@ -29,14 +29,21 @@ var Game = {
 				height = windowHeight
 			}
 
-		$('#game_board').css('width', '65%')
-		$('#goal_board').css('width', '33%')
-		$('#info_box').css('width', '33%')
-		$('#info_box').css('height', '47.8%')
+			$('#portrait').css('display', 'none')
+			$('#landscape').css('display', 'table')
 
+
+			var boardElement = $('#game_board').detach()
+			$('#landscape .board').append(boardElement)			
+
+			var goalElement = $('#goal_board').detach()
+			$('#landscape .goal').append(goalElement)	
+
+			var statsElement = $('#stats').detach()
+			$('#landscape .stats').append(statsElement)	
 
 		} else if (windowHeight > windowWidth) {
-
+			/* if portrait */
 			var aspectRatio = 2/3
 			var height = Math.round(windowWidth / aspectRatio)
 			var width = Math.round((windowHeight * aspectRatio))
@@ -48,10 +55,22 @@ var Game = {
 				width = windowWidth
 			}
 
-			$('#game_board').css('width', '100%')
-			$('#goal_board').css('width', '45%')
-			$('#info_box').css('width', '51%')
-			$('#info_box').css('height', '31%')
+
+			$('#landscape').css('display', 'none')
+			$('#portrait').css('display', 'table')
+
+
+			var boardElement = $('#game_board').detach()
+			$('#portrait .board').append(boardElement)
+
+			var goalElement = $('#goal_board').detach()
+			$('#portrait .goal').append(goalElement)
+
+			var statsElement = $('#stats').detach()
+			$('#portrait .stats').append(statsElement)	
+
+
+
 		}
 
 		div.css('height', height + "px")
