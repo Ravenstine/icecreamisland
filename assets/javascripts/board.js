@@ -39,12 +39,25 @@ var Board = {
 		this.generateBoardArray()
 		this.boardTableArray()
 		this.populateBoardTable()
+		this.selectStartingCell()
 		this.time = Stages[Player.stage].levels[Player.level].time
 
 		$('#game_board_table').on('click', 'td', function(){
 			self.selectCell(this)
 			self.ifSolved()
 		})
+	},
+
+	selectStartingCell: function(){
+		var startingRow
+		var goalArray = Stages[Player.stage].levels[Player.level].board
+		var rowIndex = Stages[Player.stage].levels[Player.level].startingCell[0]
+		var cellIndex = Stages[Player.stage].levels[Player.level].startingCell[1]
+		var gameBoard = $('#game_board_table tbody tr')[rowIndex]
+		var startingCell = $(gameBoard).find('td')[cellIndex]
+
+		$(startingCell).addClass('current')
+
 	},
 
 	countdown: function(){

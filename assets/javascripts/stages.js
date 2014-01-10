@@ -1,13 +1,14 @@
 var Stages = {
 
 	demo: {
-		oame: "Demo", 
+		name: "Demo", 
 		levels: [
 		{
 			timed: true, 
 			time: 30,
 			pard: true,
 			par: 60, 
+			startingCell: [1,1],
 			board: [
 			[[0,0,0,0,0,0],
 			 [0,1,2,1,1,0],
@@ -17,7 +18,7 @@ var Stages = {
 			 [0,0,0,0,0,0]]
 			],
 			map: [
-			[["o","s","o","o","o","o"],
+			[["o","o","o","o","o","o"],
 			 ["o","r","o","o","o","o"],
 			 ["o","r","o","o","o","o"],
 			 ["o","r","o","o","o","o"],
