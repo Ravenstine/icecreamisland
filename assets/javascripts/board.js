@@ -87,16 +87,22 @@ var Board = {
 		var goalArray = Stages[Player.stage].levels[Player.level].board[0]
 		var stageMap = Stages[Player.stage].levels[Player.level].map[0]
 		var boardArray = []
-		console.log(goalArray)
+		var randomShift = Math.floor((Math.random()*3)+1)
 
 		$(goalArray).each(function(rowIndex, row){
 			var newRow = []
 			$(row).each(function(cellIndex, cell){
-				if (stageMap[rowIndex][cellIndex] == "N"){
+				/* use original value from goal */
+				if (stageMap[rowIndex][cellIndex] == "o"){
 					newRow.push(goalArray[rowIndex][cellIndex])
-				} else if (stageMap[rowIndex][cellIndex] == "R") {
-					randomCellValue = Math.floor((Math.random()*3)+1)
+				} else if (stageMap[rowIndex][cellIndex] == "r") {
+					/* randomize cell */
+					var randomCellValue = Math.floor((Math.random()*3)+1)
 					newRow.push(randomCellValue)
+				} else if(stageMap[rowIndex][cellIndex] == "s") {
+					/* apply random shift to board */
+					var shiftedCellValue = (((goalArray[rowIndex][cellIndex]) + randomShift) % 3) + 1
+					newRow.push(shiftedCellValue)
 				}
 			})
 			boardArray.push(newRow)
