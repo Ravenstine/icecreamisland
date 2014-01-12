@@ -11,6 +11,12 @@ var Game = {
 		})
 	},
 
+	success: function(){
+		Player.level = Player.level + 1
+		Goal.init()
+		Board.init()
+	},
+
 	fitToScreen: function(){
 		var windowHeight = $(window).height()
 		var windowWidth = $(window).width()

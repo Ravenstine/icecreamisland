@@ -10,20 +10,22 @@ var Goal = {
 
 	clearGoal: function(){
 		var self = this
-		var simpleGoalArray = [];
+		var simpleGoalArray = []
+		var tableCells = $('table#goal_board_table td')
 		simpleGoalArray = simpleGoalArray.concat.apply(simpleGoalArray, self.goalArray)
 		$(simpleGoalArray).each(function(cellIndex, cell){
-			$($('table#goal_board_table td')[cellIndex]).removeClass("demo i1 i2 i3")
+			$(tableCells[cellIndex]).removeClass().attr('class', 'cell')
 		})
 	},
 
 	populateGoalTable: function(){
 		var self = this
-		var simpleGoalArray = [];
+		var simpleGoalArray = []
+		var tableCells = $('table#goal_board_table td')
 		simpleGoalArray = simpleGoalArray.concat.apply(simpleGoalArray, self.goalArray)
 		$(simpleGoalArray).each(function(cellIndex, cell){
-			$($('table#goal_board_table td')[cellIndex]).addClass("demo")
-			$($('table#goal_board_table td')[cellIndex]).addClass("i" + cell.toString())
+			$(tableCells[cellIndex]).addClass("demo")
+			$(tableCells[cellIndex]).addClass("i" + cell.toString())
 		})
 	}
 
@@ -83,16 +85,18 @@ var Board = {
 
 	clearBoard: function(){
 		var self = this
-		var simpleBoardArray = [];
+		var simpleBoardArray = []
+		var tableCells = $('table#game_board_table td')
 		simpleBoardArray = simpleBoardArray.concat.apply(simpleBoardArray, self.boardArray)
 		$(simpleBoardArray).each(function(cellIndex, cell){
-			$($('table#game_board_table td')[cellIndex]).removeClass("demo i1 i2 i3")
+			$(tableCells[cellIndex]).removeClass().attr('class', 'cell')
 		})
 	},
 
 	ifSolved: function(){
 		if (this.boardArray.compare(Goal.goalArray) == true){
 			alert('you won!')
+			Game.success()
 		}
 	},
 
@@ -146,61 +150,64 @@ var Board = {
 		this.tableArray = outputArray
 	},
 
+
 	selectCell: function(nextCell){
+		var self = this
+		nextCell = $(nextCell)
 		var currentCell = $('table#game_board_table').find('.current')
-		var currentRow = $('table#game_board_table').find('.current').parent()
-		var nextRow = $(nextCell).parent()
+		var currentRow = currentCell.parent()
+		var nextRow = nextCell.parent()
 		var currentCellIndex = currentCell.index()
-		var nextCellIndex = $(nextCell).index()
+		var nextCellIndex = nextCell.index()
 		var currentRowIndex = $(currentRow).index()
-		var nextRowIndex = $(nextRow).index()
+		var nextRowIndex = nextRow.index()
 
-		if (this.boardArray[nextRowIndex][nextCellIndex] != 0){
-			if (this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true){
+		// If the selected cell isn't blank and is adjacent to the last cell...
+		if (this.boardArray[nextRowIndex][nextCellIndex] != 0 && this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true){
+			// Calculate the new value of the next cell and toggle the selection status.
+			var newCellValue = this.calculateNewCellValue(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex)
+			currentCell.toggleClass('current')
+			nextCell.toggleClass('current')     
 
-				var newCellValue = this.calculateNewCellValue(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex)
-				this.toggleCellValue(newCellValue, nextCell)
-				this.boardArray[nextRowIndex][nextCellIndex] = newCellValue
-				$(currentCell).toggleClass('current')
-				$(nextCell).toggleClass('current') 			
+			// Unless the cell calculation returns false(meaning the new cell value is identical to the last cell)      
+			if (newCellValue != false){
+				nextCell.zanimate({backgroundSize: "0%"}, 300, function(){
+					self.toggleCellValue(newCellValue, nextCell)
+					self.boardArray[nextRowIndex][nextCellIndex] = newCellValue
+					nextCell.zanimate({backgroundSize: "100%"}, 300, function(){
+						self.boardArray[nextRowIndex][nextCellIndex] = newCellValue                                			
+					})
+				})
 			}
 		}
 
 	},
 
 	toggleCellValue: function(newCellValue, nextCell){
-		$(nextCell).removeClass('i1 i2 i3')
-		$(nextCell).addClass("i" + newCellValue)
+		nextCell = $(nextCell)
+		nextCell.removeClass('i1 i2 i3')
+		nextCell.addClass("i" + newCellValue)
 	},
 
 	calculateNewCellValue: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
 		var lastCell = this.boardArray[currentRowIndex][currentCellIndex]
 		var nextCell = this.boardArray[nextRowIndex][nextCellIndex]
-		var newValue
+		var calculation = lastCell + nextCell
+		var newValues = {3: 3, 4: 2, 5: 1}
 
 		if (lastCell == nextCell) {
-			newValue = lastCell
-		} else if (lastCell + nextCell == 3){
-			newValue = 3
-		} else if (lastCell + nextCell == 4){
-			newValue = 2
-		} else if (lastCell + nextCell == 5){
-			newValue = 1
-		}
+			return false
+		} 
 
-		return newValue
+		return newValues[calculation]
 
 	},
 
 	isAdjacent: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
-		if (nextRowIndex == currentRowIndex+1 || nextRowIndex == currentRowIndex-1){
-			if (nextCellIndex == currentCellIndex ){
+		if ((nextRowIndex == currentRowIndex+1 || nextRowIndex == currentRowIndex-1) && nextCellIndex == currentCellIndex){
 				return true
-			}
-		} else if (nextRowIndex == currentRowIndex) {
-			if (nextCellIndex == currentCellIndex+1 || nextCellIndex == currentCellIndex-1 ){
+		} else if (nextRowIndex == currentRowIndex && (nextCellIndex == currentCellIndex+1 || nextCellIndex == currentCellIndex-1)) {
 				return true
-			}
 		} else {
 			return false
 		}
