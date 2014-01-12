@@ -1,41 +1,8 @@
-var Goal = {
-
-	init: function(){
-		var self = this
-		var goalTable = $('table#goal_board_table')
-		this.clearGoal()
-		this.goalArray = Stages[Player.stage].levels[Player.level].board[0]
-		this.populateGoalTable()
-	},
-
-	clearGoal: function(){
-		var self = this
-		var simpleGoalArray = []
-		var tableCells = $('table#goal_board_table td')
-		simpleGoalArray = simpleGoalArray.concat.apply(simpleGoalArray, self.goalArray)
-		$(simpleGoalArray).each(function(cellIndex, cell){
-			$(tableCells[cellIndex]).removeClass().attr('class', 'cell')
-		})
-	},
-
-	populateGoalTable: function(){
-		var self = this
-		var simpleGoalArray = []
-		var tableCells = $('table#goal_board_table td')
-		simpleGoalArray = simpleGoalArray.concat.apply(simpleGoalArray, self.goalArray)
-		$(simpleGoalArray).each(function(cellIndex, cell){
-			$(tableCells[cellIndex]).addClass("demo")
-			$(tableCells[cellIndex]).addClass("i" + cell.toString())
-		})
-	}
-
-}
-
-
 var Board = {
 
 	init: function(){
 		var self = this
+		var boardDiv = $('#game_board')
 		var boardTable = $('table#game_board_table')
 		this.clearBoard()
 		this.generateBoardArray()
@@ -44,7 +11,14 @@ var Board = {
 		this.selectStartingCell()
 		this.time = Stages[Player.stage].levels[Player.level].time
 
-		$('#game_board_table').on('click', 'td', function(){
+		boardDiv.addClass(Player.stage)
+
+
+		boardTable.one('click', function(){
+			Stats.countdown()
+		})
+
+		boardTable.on('click', 'td', function(){
 			self.selectCell(this)
 			self.ifSolved()
 		})
@@ -86,11 +60,13 @@ var Board = {
 	clearBoard: function(){
 		var self = this
 		var simpleBoardArray = []
+		var boardDiv = $('#game_board')
 		var tableCells = $('table#game_board_table td')
 		simpleBoardArray = simpleBoardArray.concat.apply(simpleBoardArray, self.boardArray)
 		$(simpleBoardArray).each(function(cellIndex, cell){
 			$(tableCells[cellIndex]).removeClass().attr('class', 'cell')
 		})
+		boardDiv.removeClass()
 	},
 
 	ifSolved: function(){
@@ -171,10 +147,10 @@ var Board = {
 
 			// Unless the cell calculation returns false(meaning the new cell value is identical to the last cell)      
 			if (newCellValue != false){
-				nextCell.zanimate({backgroundSize: "0%"}, 300, function(){
+				nextCell.animate({backgroundSize: "0%"}, 300, function(){
 					self.toggleCellValue(newCellValue, nextCell)
 					self.boardArray[nextRowIndex][nextCellIndex] = newCellValue
-					nextCell.zanimate({backgroundSize: "100%"}, 300, function(){
+					nextCell.animate({backgroundSize: "100%"}, 300, function(){
 						self.boardArray[nextRowIndex][nextCellIndex] = newCellValue                                			
 					})
 				})

@@ -5,7 +5,10 @@ var Game = {
 		Player.init()
 		Board.init()
 		Goal.init()
+		Stats.init()
 		self.fitToScreen()
+
+
 		$(window).on('resize', function(){
 			self.fitToScreen()
 		})
@@ -21,6 +24,7 @@ var Game = {
 		var windowHeight = $(window).height()
 		var windowWidth = $(window).width()
 		var div = $('#game')
+		var statsDiv = $('#stats')
 
 		if (windowHeight < windowWidth){
 			/* if widescreen */
@@ -83,6 +87,7 @@ var Game = {
 		div.css('width', width + "px")
         div.css('margin-top', (($(window).height() - div.outerHeight())/2) + "px")
 
+        statsDiv.fitText(0.8)
 	},
 
 }
