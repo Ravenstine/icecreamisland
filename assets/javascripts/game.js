@@ -15,9 +15,14 @@ var Game = {
 	},
 
 	success: function(){
+		alert('SUCCESS')
 		Player.level = Player.level + 1
 		Goal.init()
 		Board.init()
+	},
+
+	fail: function(){
+		alert('FAIL')
 	},
 
 	fitToScreen: function(){

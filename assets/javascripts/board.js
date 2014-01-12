@@ -13,14 +13,13 @@ var Board = {
 
 		boardDiv.addClass(Player.stage)
 
-
 		boardTable.one('click', function(){
 			Stats.countdown()
 		})
 
 		boardTable.on('click', 'td', function(){
 			self.selectCell(this)
-			self.ifSolved()
+			// self.ifSolved()
 		})
 	},
 
@@ -47,7 +46,7 @@ var Board = {
 			if (boardTime < 0)
 			{
 				clearInterval(counter)
-				self.init()
+				Game.fail()
 				return
 			}
 
@@ -71,7 +70,6 @@ var Board = {
 
 	ifSolved: function(){
 		if (this.boardArray.compare(Goal.goalArray) == true){
-			alert('you won!')
 			Game.success()
 		}
 	},
@@ -151,7 +149,8 @@ var Board = {
 					self.toggleCellValue(newCellValue, nextCell)
 					self.boardArray[nextRowIndex][nextCellIndex] = newCellValue
 					nextCell.animate({backgroundSize: "100%"}, 300, function(){
-						self.boardArray[nextRowIndex][nextCellIndex] = newCellValue                                			
+						self.boardArray[nextRowIndex][nextCellIndex] = newCellValue  
+						self.ifSolved()                              			
 					})
 				})
 			}

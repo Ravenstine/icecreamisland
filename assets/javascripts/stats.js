@@ -25,7 +25,7 @@ var Stats = {
 			if (boardTime < 0)
 			{
 				clearInterval(counter)
-				self.init()
+				Game.fail()
 				return
 			}
 
