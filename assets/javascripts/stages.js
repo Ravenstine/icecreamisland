@@ -9,7 +9,7 @@ var Stages = [
 		{
 			timed: true, 
 			time: 30,
-			pard: true,
+			haspar: true,
 			par: 60, 
 			startingCell: [1,1],
 			board: [

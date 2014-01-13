@@ -16,11 +16,11 @@ var Board = {
 
 		this.controls(boardTable)
 
-
 	},
 
 	controls: function(boardTable){
 		var self = this
+		var boardTableCells = $('#game_board_table td')
 
 		boardTable.one('click', function(){
 			Stats.countdown()
@@ -31,7 +31,7 @@ var Board = {
 		})
 
 
-		$('#game_board_table td').on('swiperight', function(e) {
+		boardTableCells.on('swiperight', function(e) {
 			var currentCell = $(this)
 			var currentRow = currentCell.parent()
 			var nextCell = currentRow.find('td')[currentCell.index() + 1]
@@ -39,7 +39,7 @@ var Board = {
  			self.selectCell(nextCell)
 		})
 
-		$('#game_board_table td').on('swipeleft', function(e) {
+		boardTableCells.on('swipeleft', function(e) {
 			var currentCell = $(this)
 			var currentRow = currentCell.parent()
 			var nextCell = currentRow.find('td')[currentCell.index() - 1]
@@ -47,7 +47,7 @@ var Board = {
  			self.selectCell(nextCell)
 		})
 
-		$('#game_board_table td').on('swipedown', function(e) {
+		boardTableCells.on('swipedown', function(e) {
 			var currentCell = $(this)
 			var boardTable = $('table#game_board_table tr')
 			var currentRow = currentCell.parent()
@@ -56,7 +56,7 @@ var Board = {
  			self.selectCell(nextCell)
 		})
 
-		$('#game_board_table td').on('swipeup', function(e) {
+		boardTableCells.on('swipeup', function(e) {
 			var currentCell = $(this)
 			var boardTable = $('table#game_board_table tr')
 			var currentRow = currentCell.parent()
@@ -170,11 +170,12 @@ var Board = {
 
 	populateBoardTable: function(){
 		var self = this
+		var gameBoardCells = $('table#game_board_table td')
 		var simpleBoardArray = [];
 		simpleBoardArray = simpleBoardArray.concat.apply(simpleBoardArray, self.boardArray)
 		$(simpleBoardArray).each(function(cellIndex, cell){
-			$($('table#game_board_table td')[cellIndex]).addClass("demo")
-			$($('table#game_board_table td')[cellIndex]).addClass("i" + cell.toString())
+			$(gameBoardCells[cellIndex]).addClass("demo")
+			$(gameBoardCells[cellIndex]).addClass("i" + cell.toString())
 		})
 	},
 
@@ -222,7 +223,7 @@ var Board = {
 				})
 			}
 		}
-
+		Stats.move()
 	},
 
 	toggleCellValue: function(newCellValue, nextCell){

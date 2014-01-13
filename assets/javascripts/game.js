@@ -34,6 +34,8 @@ var Game = {
 		var windowWidth = $(window).width()
 		var div = $('#game')
 		var statsDiv = $('#stats')
+		var portrait = $('#portrait')
+		var landscape = $('#landscape')
 
 		if (windowHeight < windowWidth){
 			/* if widescreen */
@@ -48,18 +50,18 @@ var Game = {
 				height = windowHeight
 			}
 
-			$('#portrait').css('display', 'none')
-			$('#landscape').css('display', 'table')
+			portrait.css('display', 'none')
+			landscape.css('display', 'table')
 
 
 			var boardElement = $('#game_board').detach()
-			$('#landscape .board').append(boardElement)			
+			landscape.find('.board').append(boardElement)			
 
 			var goalElement = $('#goal_board').detach()
-			$('#landscape .goal').append(goalElement)	
+			landscape.find('.goal').append(goalElement)	
 
 			var statsElement = $('#stats').detach()
-			$('#landscape .stats').append(statsElement)	
+			landscape.find('.stats').append(statsElement)	
 
 		} else if (windowHeight > windowWidth) {
 			/* if portrait */
@@ -75,18 +77,18 @@ var Game = {
 			}
 
 
-			$('#landscape').css('display', 'none')
-			$('#portrait').css('display', 'table')
+			landscape.css('display', 'none')
+			portrait.css('display', 'table')
 
 
 			var boardElement = $('#game_board').detach()
-			$('#portrait .board').append(boardElement)
+			portrait.find('.board').append(boardElement)
 
 			var goalElement = $('#goal_board').detach()
-			$('#portrait .goal').append(goalElement)
+			portrait.find('.goal').append(goalElement)
 
 			var statsElement = $('#stats').detach()
-			$('#portrait .stats').append(statsElement)	
+			portrait.find('.stats').append(statsElement)	
 
 
 
