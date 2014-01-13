@@ -30,9 +30,42 @@ var Board = {
 			self.selectCell(this)
 		})
 
+
+		$('#game_board_table td').on('swiperight', function(e) {
+			var currentCell = $(this)
+			var currentRow = currentCell.parent()
+			var nextCell = currentRow.find('td')[currentCell.index() + 1]
+
+ 			self.selectCell(nextCell)
+		})
+
+		$('#game_board_table td').on('swipeleft', function(e) {
+			var currentCell = $(this)
+			var currentRow = currentCell.parent()
+			var nextCell = currentRow.find('td')[currentCell.index() - 1]
+
+ 			self.selectCell(nextCell)
+		})
+
+		$('#game_board_table td').on('swipedown', function(e) {
+			var currentCell = $(this)
+			var boardTable = $('table#game_board_table tr')
+			var currentRow = currentCell.parent()
+			var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
+
+ 			self.selectCell(nextCell)
+		})
+
+		$('#game_board_table td').on('swipeup', function(e) {
+			var currentCell = $(this)
+			var boardTable = $('table#game_board_table tr')
+			var currentRow = currentCell.parent()
+			var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
+
+ 			self.selectCell(nextCell)
+		})
+
 		document.addEventListener("keyup", function(e) {
-			// var gameDiv = document.getElementById('#game')
-			// gameDiv.tabIndex = 0
 			e.preventDefault()
 			var boardTable = $('table#game_board_table tr')
 			var currentCell = $('table#game_board_table').find('.current')
@@ -162,7 +195,6 @@ var Board = {
 	selectCell: function(nextCell){
 		var self = this
 		nextCell = $(nextCell)
-		console.log(nextCell)
 		var currentCell = $('table#game_board_table').find('.current')
 		var currentRow = currentCell.parent()
 		var nextRow = nextCell.parent()
