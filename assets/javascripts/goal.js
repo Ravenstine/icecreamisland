@@ -3,10 +3,10 @@ var Goal = {
 	init: function(){
 		var self = this
 		var goalTable = $('table#goal_board_table')
-		this.clearGoal()
 		var goalDiv = $('#goal_board')
 
-		goalDiv.addClass(Player.stage)
+		this.clearGoal()
+		goalDiv.addClass(Stages[Player.stage].nicename)
 		this.goalArray = Stages[Player.stage].levels[Player.level].board[0]
 		this.populateGoalTable()
 	},

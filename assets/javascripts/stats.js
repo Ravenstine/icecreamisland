@@ -3,9 +3,10 @@ var Stats = {
 	init: function(){
 		var self = this
 		var statsDiv = $('#stats')
+		this.clearStats()
 		this.time = Stages[Player.stage].levels[Player.level].time
 
-		statsDiv.addClass(Player.stage)
+		statsDiv.addClass(Stages[Player.stage].nicename)
 	},
 
 	clearStats: function(){

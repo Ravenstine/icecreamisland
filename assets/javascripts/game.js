@@ -19,10 +19,14 @@ var Game = {
 		Player.level = Player.level + 1
 		Goal.init()
 		Board.init()
+		Stats.init()
 	},
 
 	fail: function(){
 		alert('FAIL')
+		Goal.init()
+		Board.init()
+		Stats.init()
 	},
 
 	fitToScreen: function(){
@@ -90,7 +94,7 @@ var Game = {
 
 		div.css('height', height + "px")
 		div.css('width', width + "px")
-        div.css('margin-top', (($(window).height() - div.outerHeight())/2) + "px")
+        // div.css('margin-top', (($(window).height() - div.outerHeight())/2) + "px")
 
         statsDiv.fitText(0.8)
 	},

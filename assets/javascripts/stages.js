@@ -1,10 +1,11 @@
-var Stages = {
+var Stages = [
 
-	demo: {
+	{
 		name: "Demo", 
+		nicename: "demo",
 		levels: [
 
-		
+
 		{
 			timed: true, 
 			time: 30,
@@ -50,11 +51,12 @@ var Stages = {
 			 ["o","r","o","o","r","o"],
 			 ["o","o","o","o","o","o"]]
 			]
-		}
+		} 
 
 
 
-		]
-	}
+		] // end demo levels
 
-}
+	} // end demo stage
+
+] // end stages

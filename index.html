@@ -7,7 +7,15 @@
 	<link rel="stylesheet" href="assets/css/game.css">
 
 	<!-- jQuery -->
-	<script src="assets/javascripts/jquery-1.10.2.js"></script>
+	<!-- // <script src="assets/javascripts/jquery-1.10.2.js"></script> -->
+        <script src="assets/javascripts/jquery-2.0.3.js"></script>
+        <!-- // <script src="assets/javascripts/zepto.js"></script> -->
+        <!-- // <script src="assets/javascripts/fx.js"></script> -->
+        <script src="assets/javascripts/jquery.fittext.js"></script>
+        <script src="assets/javascripts/jquery.tap.min.js"></script>
+
+
+
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -16,13 +24,15 @@
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
 
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="assets/javascripts/bootstrap.min.js"></script>
+	<script src="assets/javascripts/bootstrap.js"></script>
 
 	<!-- game.js -->
 	<script src="assets/javascripts/head.js"></script>
 	<script src="assets/javascripts/player.js"></script>
 	<script src="assets/javascripts/stages.js"></script>
 	<script src="assets/javascripts/board.js"></script>
+        <script src="assets/javascripts/goal.js"></script>
+        <script src="assets/javascripts/stats.js"></script>
 	<script src="assets/javascripts/game.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -38,7 +48,7 @@
 	<div class="tab-content">
 
 
-		<div id="landing" class="container tab-pane active">
+		<div id="landing" class="container tab-pane">
 			<div class="row">
 				<div class="col-sm-2 col-md-2">
 
@@ -59,7 +69,7 @@
 
 
 
-		<div id="game" class="tab-pane">
+		<div id="game" class="tab-pane active">
 
 
 			<TABLE id="landscape" WIDTH=100% height=100% CELLPADDING=4 CELLSPACING=0>
@@ -168,7 +178,9 @@
 
 
 
-                        <div id="stats"></div>
+                        <div id="stats">
+                                <p id="seconds">Seconds: <span id="timer"></span></p>
+                        </div>
 
 
 

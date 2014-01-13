@@ -4,6 +4,7 @@ var Board = {
 		var self = this
 		var boardDiv = $('#game_board')
 		var boardTable = $('table#game_board_table')
+
 		this.clearBoard()
 		this.generateBoardArray()
 		this.boardTableArray()
@@ -11,16 +12,49 @@ var Board = {
 		this.selectStartingCell()
 		this.time = Stages[Player.stage].levels[Player.level].time
 
-		boardDiv.addClass(Player.stage)
+		boardDiv.addClass(Stages[Player.stage].nicename)
+
+		this.controls(boardTable)
+
+
+	},
+
+	controls: function(boardTable){
+		var self = this
 
 		boardTable.one('click', function(){
 			Stats.countdown()
 		})
 
-		boardTable.on('click', 'td', function(){
+		boardTable.on('tap', 'td', function(){
 			self.selectCell(this)
-			// self.ifSolved()
 		})
+
+		document.addEventListener("keyup", function(e) {
+			// var gameDiv = document.getElementById('#game')
+			// gameDiv.tabIndex = 0
+			e.preventDefault()
+			var boardTable = $('table#game_board_table tr')
+			var currentCell = $('table#game_board_table').find('.current')
+			var currentRow = currentCell.parent()
+
+			// if right arrow pressed
+			  if ( e.which == 39 ) {
+			  	var nextCell = currentRow.find('td')[currentCell.index() + 1]
+			// if left arrow pressed
+			  } else if ( e.which == 37){
+			  	var nextCell = currentRow.find('td')[currentCell.index() - 1]
+			// if down arrow pressed
+			  } else if (e.which == 40){
+			  	var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
+			// if up arrow pressed
+			  } else if (e.which == 38){
+			  	var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
+			  }
+
+			 self.selectCell(nextCell)
+			 return false
+		}, false)
 	},
 
 	selectStartingCell: function(){
@@ -128,6 +162,7 @@ var Board = {
 	selectCell: function(nextCell){
 		var self = this
 		nextCell = $(nextCell)
+		console.log(nextCell)
 		var currentCell = $('table#game_board_table').find('.current')
 		var currentRow = currentCell.parent()
 		var nextRow = nextCell.parent()
@@ -179,14 +214,40 @@ var Board = {
 	},
 
 	isAdjacent: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
-		if ((nextRowIndex == currentRowIndex+1 || nextRowIndex == currentRowIndex-1) && nextCellIndex == currentCellIndex){
-				return true
-		} else if (nextRowIndex == currentRowIndex && (nextCellIndex == currentCellIndex+1 || nextCellIndex == currentCellIndex-1)) {
-				return true
+		if (this.isAbove(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) || this.isBelow(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) || this.isToLeft(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) || this.isToRight(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex)){
+			return true
 		} else {
 			return false
 		}
-	}
+	},
+
+	isAbove: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
+		if ((nextRowIndex == currentRowIndex+1) && nextCellIndex == currentCellIndex){
+			return true	
+		}
+		return false
+	},
+
+	isBelow: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
+		if ((nextRowIndex == currentRowIndex-1) && nextCellIndex == currentCellIndex){
+			return true	
+		}
+		return false
+	},
+
+	isToLeft: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
+		if (nextRowIndex == currentRowIndex && (nextCellIndex == currentCellIndex-1)){
+			return true	
+		}
+		return false
+	},
+
+	isToRight: function(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex){
+		if (nextRowIndex == currentRowIndex && (nextCellIndex == currentCellIndex+1)){
+			return true	
+		}
+		return false
+	},
 
 }
 

@@ -1,5 +1,7 @@
  .cell {
     background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .cell-image {
@@ -16,6 +18,7 @@
 #game {
 	background-color: green;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 #game_board_table {
@@ -76,24 +79,26 @@
 
 /* demo */
 
-#game_board {
+#game_board.demo{
 		background-color: rgba(255, 255, 255, 0.5);
 		display: inline-block;
 		padding: 2%;
 		float: right;
 }
 
-#goal_board {
+#goal_board.demo{
 		background-color: rgba(255, 255, 255, 0.5);
 		display: inline-block;
 		padding: 1%;
 		float: left;
 }
 
-#info_box {
+#stats.demo{
 		background-color: rgba(255, 255, 255, 0.5);
-		display: inline-block;
-		padding: 1%;
+		/*display: inline-block;*/
+		/*padding: 1%;*/
+		width: 100%;
+		height: 100%;
 }
 
 
