@@ -54,6 +54,8 @@ var Stats = {
 	countdown: function(){
 		var self = this
 		var boardTime = this.time
+		
+		if (Stages[Player.stage].levels[Player.level] == true){
 		this.counter=setInterval(timer, 1000) //1000 will  run it every 1 second
 		
 		function timer()
@@ -71,5 +73,5 @@ var Stats = {
 		}
 
 	}
-
+}
 }

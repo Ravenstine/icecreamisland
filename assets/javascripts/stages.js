@@ -7,7 +7,7 @@ var Stages = [
 
 
 		{
-			timed: true, 
+			timed: false, 
 			time: 70,
 			haspar: true,
 			par: 60, 
