@@ -14,12 +14,17 @@ When the player moves the selection to a different square, the kinds of ice crea
 For example:
 
 strawberry + chocolate = popsicle
+
 chocolate + strawberry = popsicle
+
 popsicle + chocolate = strawberry
+
 strawberry + popsicle = chocolate
 
 However, the destination square does not change if it is the same type as the previous square:
 
 strawberry + strawberry = strawberry
+
 chocolate + chocolate = chocolate
+
 popsicle + popsicle = popsicle
