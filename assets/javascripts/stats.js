@@ -40,10 +40,14 @@ var Stats = {
 	move: function(){
 		var currentStage = Stages[Player.stage]
 		var currentLevel = currentStage.levels[Player.level]
-		this.moves = this.moves + 1
-		document.getElementById("move_count").innerHTML=this.moves
-		if (this.moves > currentLevel.par){
-			Game.fail()
+
+		// add to moves count if the current level calls for it
+		if (currentLevel.haspar == true){
+			this.moves = this.moves + 1
+			document.getElementById("move_count").innerHTML=this.moves
+			if (this.moves > currentLevel.par){
+				Game.fail()
+			}
 		}
 	},
 

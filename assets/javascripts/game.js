@@ -16,7 +16,7 @@ var Game = {
 
 	success: function(){
 		alert('SUCCESS')
-		Player.level = Player.level + 1
+		this.advancePlayer()
 		Goal.init()
 		Stats.init()
 		Board.init()
@@ -25,9 +25,23 @@ var Game = {
 	fail: function(){
 		alert('FAIL')
 		Goal.init()
-		// clearInterval(Stats.counter)
 		Stats.init()
 		Board.init()
+	},
+
+	advancePlayer: function(){
+		var currentStage = Stages[Player.stage]
+		var currentLevel = currentStage.levels[Player.level]
+		var currentLevelIndex = Player.level
+		// increment stage if player has completed current level
+		if (Player.level == (currentStage.levels.length - 1)){
+			Player.stage = Player.stage + 1
+			Player.level = 0
+			// else increment level
+		} else {
+			Player.level = Player.level + 1
+		}
+
 	},
 
 	fitToScreen: function(){

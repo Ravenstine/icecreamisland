@@ -22,6 +22,8 @@ var Board = {
 	controls: function(boardTable){
 		var self = this
 		var boardTableCells = boardTable.find('td')
+
+		// Remove existing event handlers to prevent duplicates.
 		boardTable.off()
 		boardTableCells.off()
 		$(document).off()
