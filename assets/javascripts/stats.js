@@ -1,7 +1,9 @@
 var Stats = {
 
-	init: function(){
+	init: function(stopTimer){
 		var self = this
+		this.counter = ''
+		this.stopTimer = stopTimer
 		var statsDiv = $('#stats')
 		var currentStage = Stages[Player.stage]
 		var currentLevel = currentStage.levels[Player.level]
@@ -34,21 +36,36 @@ var Stats = {
 	},
 
 	move: function(){
-		this.moves += 1
+		var currentStage = Stages[Player.stage]
+		var currentLevel = currentStage.levels[Player.level]
+		this.moves = this.moves + 1
 		document.getElementById("move_count").innerHTML=this.moves
+		if (this.moves > currentLevel.par){
+			Game.fail()
+		}
 	},
 
 	countdown: function(){
 		var self = this
 		var boardTime = this.time
-		var counter=setInterval(timer, 1000) //1000 will  run it every 1 second
+		// this.stopTimer == false
+		this.counter=setInterval(timer, 1000) //1000 will  run it every 1 second
+		
+
 		function timer()
 		{
-			boardTime= (boardTime) - 1
+			boardTime = boardTime - 1
 			console.log(boardTime)
-			if (boardTime < 0)
+			console.log(this.stopTimer)
+			if (this.stopTimer == true){
+				this.stopTimer = false
+				clearInterval(this.counter)
+				return
+			}
+
+			if (boardTime == 0)
 			{
-				clearInterval(counter)
+				clearInterval(this.counter)
 				Game.fail()
 				return
 			}

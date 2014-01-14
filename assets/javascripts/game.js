@@ -18,15 +18,16 @@ var Game = {
 		alert('SUCCESS')
 		Player.level = Player.level + 1
 		Goal.init()
-		Board.init()
 		Stats.init()
+		Board.init()
 	},
 
 	fail: function(){
 		alert('FAIL')
 		Goal.init()
-		Board.init()
+		clearInterval(Stats.counter)
 		Stats.init()
+		Board.init()
 	},
 
 	fitToScreen: function(){

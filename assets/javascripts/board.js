@@ -5,12 +5,11 @@ var Board = {
 		var boardDiv = $('#game_board')
 		var boardTable = $('table#game_board_table')
 
-		this.clearBoard()
+		this.clearBoard(boardTable)
 		this.generateBoardArray()
 		this.boardTableArray()
 		this.populateBoardTable()
 		this.selectStartingCell()
-		this.time = Stages[Player.stage].levels[Player.level].time
 
 		boardDiv.addClass(Stages[Player.stage].nicename)
 
@@ -21,8 +20,11 @@ var Board = {
 	controls: function(boardTable){
 		var self = this
 		var boardTableCells = $('#game_board_table td')
+		boardTable.off()
+		boardTableCells.off()
+		$(document).off()
 
-		boardTable.one('click', function(){
+		boardTable.one('tap', function(){
 			Stats.countdown()
 		})
 
@@ -65,7 +67,7 @@ var Board = {
  			self.selectCell(nextCell)
 		})
 
-		document.addEventListener("keyup", function(e) {
+		$(document).on("keyup", function(e) {
 			e.preventDefault()
 			var boardTable = $('table#game_board_table tr')
 			var currentCell = $('table#game_board_table').find('.current')
@@ -86,8 +88,7 @@ var Board = {
 			  }
 
 			 self.selectCell(nextCell)
-			 return false
-		}, false)
+		})
 	},
 
 	selectStartingCell: function(){
@@ -102,33 +103,14 @@ var Board = {
 
 	},
 
-	countdown: function(){
-		var self = this
-		var boardTime = this.time
-		var counter=setInterval(timer, 1000) //1000 will  run it every 1 second
-		function timer()
-		{
-			boardTime= (boardTime) - 1
-			console.log(boardTime)
-			if (boardTime < 0)
-			{
-				clearInterval(counter)
-				Game.fail()
-				return
-			}
-
-		 document.getElementById("timer").innerHTML=boardTime + " secs" // watch for spelling
-		}
-
-	},
-
-
-	clearBoard: function(){
+	clearBoard: function(boardTable){
 		var self = this
 		var simpleBoardArray = []
 		var boardDiv = $('#game_board')
 		var tableCells = $('table#game_board_table td')
 		simpleBoardArray = simpleBoardArray.concat.apply(simpleBoardArray, self.boardArray)
+		boardTable.off()
+
 		$(simpleBoardArray).each(function(cellIndex, cell){
 			$(tableCells[cellIndex]).removeClass().attr('class', 'cell')
 		})
@@ -210,7 +192,7 @@ var Board = {
 			var newCellValue = this.calculateNewCellValue(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex)
 			currentCell.toggleClass('current')
 			nextCell.toggleClass('current')     
-
+			Stats.move()
 			// Unless the cell calculation returns false(meaning the new cell value is identical to the last cell)      
 			if (newCellValue != false){
 				nextCell.animate({backgroundSize: "0%"}, 300, function(){
@@ -223,7 +205,6 @@ var Board = {
 				})
 			}
 		}
-		Stats.move()
 	},
 
 	toggleCellValue: function(newCellValue, nextCell){
