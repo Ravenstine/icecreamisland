@@ -8,7 +8,7 @@ var Stages = [
 
 		{
 			timed: true, 
-			time: 30,
+			time: 70,
 			haspar: true,
 			par: 60, 
 			startingCell: [1,1],
@@ -31,7 +31,7 @@ var Stages = [
 		},
 		{
 			timed: true, 
-			time: 30,
+			time: 70,
 			pard: true,
 			par: 60, 
 			startingCell: [0,0],

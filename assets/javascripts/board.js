@@ -4,6 +4,7 @@ var Board = {
 		var self = this
 		var boardDiv = $('#game_board')
 		var boardTable = $('table#game_board_table')
+		this.started = false
 
 		this.clearBoard(boardTable)
 		this.generateBoardArray()
@@ -24,9 +25,17 @@ var Board = {
 		boardTableCells.off()
 		$(document).off()
 
-		boardTable.one('tap', function(){
-			Stats.countdown()
-		})
+		// boardTable.one('tap', function(){
+		// 	Stats.countdown()
+		// })
+
+		// boardTable.one('keyup', function(){
+		// 	Stats.countdown()
+		// })
+
+		// boardTable.one('swipe', function(){
+		// 	Stats.countdown()
+		// })
 
 		boardTable.on('tap', 'td', function(){
 			self.selectCell(this)
@@ -191,7 +200,14 @@ var Board = {
 			// Calculate the new value of the next cell and toggle the selection status.
 			var newCellValue = this.calculateNewCellValue(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex)
 			currentCell.toggleClass('current')
-			nextCell.toggleClass('current')     
+			nextCell.toggleClass('current') 
+
+			// Start countdown if current level has started.
+			if (self.started == false){
+				self.started = true
+				Stats.countdown()   				
+			} 
+
 			Stats.move()
 			// Unless the cell calculation returns false(meaning the new cell value is identical to the last cell)      
 			if (newCellValue != false){

@@ -25,7 +25,7 @@ var Game = {
 	fail: function(){
 		alert('FAIL')
 		Goal.init()
-		clearInterval(Stats.counter)
+		// clearInterval(Stats.counter)
 		Stats.init()
 		Board.init()
 	},
