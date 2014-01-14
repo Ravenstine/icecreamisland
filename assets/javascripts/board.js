@@ -5,6 +5,7 @@ var Board = {
 		var boardDiv = $('#game_board')
 		var boardTable = $('table#game_board_table')
 		this.started = false
+		this.moving = false
 
 		this.clearBoard(boardTable)
 		this.generateBoardArray()
@@ -20,84 +21,88 @@ var Board = {
 
 	controls: function(boardTable){
 		var self = this
-		var boardTableCells = $('#game_board_table td')
+		var boardTableCells = boardTable.find('td')
 		boardTable.off()
 		boardTableCells.off()
 		$(document).off()
 
-		// boardTable.one('tap', function(){
-		// 	Stats.countdown()
-		// })
-
-		// boardTable.one('keyup', function(){
-		// 	Stats.countdown()
-		// })
-
-		// boardTable.one('swipe', function(){
-		// 	Stats.countdown()
-		// })
 
 		boardTable.on('tap', 'td', function(){
-			self.selectCell(this)
+			if (self.moving == false){
+				self.selectCell(this)
+			}
 		})
 
 
 		boardTableCells.on('swiperight', function(e) {
-			var currentCell = $(this)
-			var currentRow = currentCell.parent()
-			var nextCell = currentRow.find('td')[currentCell.index() + 1]
+			if (self.moving == false){
+				var currentCell = $(this)
+				var currentRow = currentCell.parent()
+				var nextCell = currentRow.find('td')[currentCell.index() + 1]
 
- 			self.selectCell(nextCell)
+				self.selectCell(nextCell)
+			}
 		})
 
 		boardTableCells.on('swipeleft', function(e) {
-			var currentCell = $(this)
-			var currentRow = currentCell.parent()
-			var nextCell = currentRow.find('td')[currentCell.index() - 1]
+			if (self.moving == false){
+				var currentCell = $(this)
+				var currentRow = currentCell.parent()
+				var nextCell = currentRow.find('td')[currentCell.index() - 1]
 
- 			self.selectCell(nextCell)
+				self.selectCell(nextCell)
+			}
 		})
 
 		boardTableCells.on('swipedown', function(e) {
-			var currentCell = $(this)
-			var boardTable = $('table#game_board_table tr')
-			var currentRow = currentCell.parent()
-			var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
+			if (self.moving == false){
+				var currentCell = $(this)
+				var boardTable = $('table#game_board_table tr')
+				var currentRow = currentCell.parent()
+				var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
 
- 			self.selectCell(nextCell)
+				self.selectCell(nextCell)
+			}
 		})
 
 		boardTableCells.on('swipeup', function(e) {
-			var currentCell = $(this)
-			var boardTable = $('table#game_board_table tr')
-			var currentRow = currentCell.parent()
-			var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
+			if (self.moving == false){
+				var currentCell = $(this)
+				var boardTable = $('table#game_board_table tr')
+				var currentRow = currentCell.parent()
+				var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
 
- 			self.selectCell(nextCell)
+				self.selectCell(nextCell)
+			}
 		})
 
 		$(document).on("keyup", function(e) {
 			e.preventDefault()
-			var boardTable = $('table#game_board_table tr')
-			var currentCell = $('table#game_board_table').find('.current')
-			var currentRow = currentCell.parent()
+			console.log(self.moving)
+			console.log(self.wut)
+
+			if (self.moving == false){
+				var boardTable = $('table#game_board_table tr')
+				var currentCell = $('table#game_board_table').find('.current')
+				var currentRow = currentCell.parent()
 
 			// if right arrow pressed
-			  if ( e.which == 39 ) {
-			  	var nextCell = currentRow.find('td')[currentCell.index() + 1]
+			if ( e.which == 39 ) {
+				var nextCell = currentRow.find('td')[currentCell.index() + 1]
 			// if left arrow pressed
-			  } else if ( e.which == 37){
-			  	var nextCell = currentRow.find('td')[currentCell.index() - 1]
+		} else if ( e.which == 37){
+			var nextCell = currentRow.find('td')[currentCell.index() - 1]
 			// if down arrow pressed
-			  } else if (e.which == 40){
-			  	var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
+		} else if (e.which == 40){
+			var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
 			// if up arrow pressed
-			  } else if (e.which == 38){
-			  	var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
-			  }
+		} else if (e.which == 38){
+			var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
+		}
 
-			 self.selectCell(nextCell)
-		})
+		self.selectCell(nextCell)
+	}
+})
 	},
 
 	selectStartingCell: function(){
@@ -186,6 +191,7 @@ var Board = {
 
 	selectCell: function(nextCell){
 		var self = this
+
 		nextCell = $(nextCell)
 		var currentCell = $('table#game_board_table').find('.current')
 		var currentRow = currentCell.parent()
@@ -196,7 +202,12 @@ var Board = {
 		var nextRowIndex = nextRow.index()
 
 		// If the selected cell isn't blank and is adjacent to the last cell...
-		if (this.boardArray[nextRowIndex][nextCellIndex] != 0 && this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true){
+		if (this.boardArray[nextRowIndex][nextCellIndex] != 0 && this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true && self.moving != true){
+			
+			// Place lock on movements until the array value for the new cell is toggled.
+			// This is to prevent erroneous calculations from using an outdated array.
+			self.moving = true
+
 			// Calculate the new value of the next cell and toggle the selection status.
 			var newCellValue = this.calculateNewCellValue(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex)
 			currentCell.toggleClass('current')
@@ -211,16 +222,24 @@ var Board = {
 			Stats.move()
 			// Unless the cell calculation returns false(meaning the new cell value is identical to the last cell)      
 			if (newCellValue != false){
+
+				self.boardArray[nextRowIndex][nextCellIndex] = newCellValue
+				self.moving = false
+
 				nextCell.animate({backgroundSize: "0%"}, 300, function(){
 					self.toggleCellValue(newCellValue, nextCell)
-					self.boardArray[nextRowIndex][nextCellIndex] = newCellValue
 					nextCell.animate({backgroundSize: "100%"}, 300, function(){
-						self.boardArray[nextRowIndex][nextCellIndex] = newCellValue  
+						// self.boardArray[nextRowIndex][nextCellIndex] = newCellValue 
 						self.ifSolved()                              			
 					})
 				})
+			} else {
+				self.moving = false
 			}
+		} else {
+			self.moving = false
 		}
+
 	},
 
 	toggleCellValue: function(newCellValue, nextCell){
