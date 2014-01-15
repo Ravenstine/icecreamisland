@@ -55,7 +55,7 @@ var Stats = {
 		var self = this
 		var boardTime = this.time
 		
-		if (Stages[Player.stage].levels[Player.level] == true){
+		if (Stages[Player.stage].levels[Player.level].timed == true){
 		this.counter=setInterval(timer, 1000) //1000 will  run it every 1 second
 		
 		function timer()
