@@ -6,8 +6,8 @@ var Goal = {
 		var goalDiv = $('#goal_board')
 
 		this.clearGoal()
-		goalDiv.addClass(Stages[Player.stage].nicename)
-		this.goalArray = Stages[Player.stage].levels[Player.level].board[0]
+		goalDiv.addClass(Stages[Game.stage].nicename)
+		this.goalArray = Stages[Game.stage].levels[Game.level].board[0]
 		this.populateGoalTable()
 	},
 

@@ -3,15 +3,15 @@ var Stats = {
 	init: function(stopTimer){
 		var self = this
 		var statsDiv = $('#stats')
-		var currentStage = Stages[Player.stage]
-		var currentLevel = currentStage.levels[Player.level]
+		var currentStage = Stages[Game.stage]
+		var currentLevel = currentStage.levels[Game.level]
 		this.time = currentLevel.time
 		this.moves = 0
 
 		this.populateStats(currentLevel)
 		this.clearStats(statsDiv)
 
-		statsDiv.addClass(Stages[Player.stage].nicename)
+		statsDiv.addClass(Stages[Game.stage].nicename)
 	},
 
 	populateStats: function(currentLevel){
@@ -38,8 +38,8 @@ var Stats = {
 	},
 
 	move: function(){
-		var currentStage = Stages[Player.stage]
-		var currentLevel = currentStage.levels[Player.level]
+		var currentStage = Stages[Game.stage]
+		var currentLevel = currentStage.levels[Game.level]
 
 		// add to moves count if the current level calls for it
 		if (currentLevel.haspar == true){
@@ -55,7 +55,7 @@ var Stats = {
 		var self = this
 		var boardTime = this.time
 		
-		if (Stages[Player.stage].levels[Player.level].timed == true){
+		if (Stages[Game.stage].levels[Game.level].timed == true){
 		this.counter=setInterval(timer, 1000) //1000 will  run it every 1 second
 		
 		function timer()

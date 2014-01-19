@@ -22,9 +22,11 @@ var Game = {
                     Player.stage = data.stage
                     Player.level = data.level
 
-                    self.start()
+                    // self.start()
+                    Game.stage = Player.stage
+                    // Game.level = Player.level
                     $('#landing').toggleClass('active')
-                	$('#game-panel').toggleClass('active')
+                	$('#current_stage').toggleClass('active')
 					self.fitToScreen()
                 })
             },{scope: 'email,publish_stream,publish_actions'})
@@ -34,18 +36,21 @@ var Game = {
 
 	start: function(){
 		var self = this
-		Board.init()
 		Goal.init()
 		Stats.init()
+		Board.init()
 	},
 
 	success: function(){
 		alert('SUCCESS')
 		this.advancePlayer()
 		this.savePlayer()
-		Goal.init()
-		Stats.init()
-		Board.init()
+		Map.init()
+		$('#current_stage').toggleClass('active')
+        $('#game-panel').toggleClass('active')
+		// Goal.init()
+		// Stats.init()
+		// Board.init()
 	},
 
 	fail: function(){
@@ -72,11 +77,13 @@ var Game = {
 		var currentLevelIndex = Player.level
 
 		// increment stage if player has completed current level
-		if (Player.level == (currentStage.levels.length - 1)){
+		if (Game.level == (currentStage.levels.length - 1)){
+			debugger
 			Player.stage = Player.stage + 1
 			Player.level = 0
 			// else increment level
-		} else {
+		} else if (Game.level == Player.level) {
+			debugger
 			Player.level = Player.level + 1
 		}
 

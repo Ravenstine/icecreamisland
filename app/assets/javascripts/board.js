@@ -1,6 +1,7 @@
 var Board = {
 
 	init: function(){
+		// debugger
 		var self = this
 		var boardDiv = $('#game_board')
 		var boardTable = $('table#game_board_table')
@@ -13,7 +14,7 @@ var Board = {
 		this.populateBoardTable()
 		this.selectStartingCell()
 
-		boardDiv.addClass(Stages[Player.stage].nicename)
+		boardDiv.addClass(Stages[Game.stage].nicename)
 
 		this.controls(boardTable)
 
@@ -36,47 +37,47 @@ var Board = {
 		})
 
 
-		boardTableCells.on('swiperight', function(e) {
-			if (self.moving == false){
-				var currentCell = $(this)
-				var currentRow = currentCell.parent()
-				var nextCell = currentRow.find('td')[currentCell.index() + 1]
+		// boardTableCells.on('swiperight', function(e) {
+		// 	if (self.moving == false){
+		// 		var currentCell = $(this)
+		// 		var currentRow = currentCell.parent()
+		// 		var nextCell = currentRow.find('td')[currentCell.index() + 1]
 
-				self.selectCell(nextCell)
-			}
-		})
+		// 		self.selectCell(nextCell)
+		// 	}
+		// })
 
-		boardTableCells.on('swipeleft', function(e) {
-			if (self.moving == false){
-				var currentCell = $(this)
-				var currentRow = currentCell.parent()
-				var nextCell = currentRow.find('td')[currentCell.index() - 1]
+		// boardTableCells.on('swipeleft', function(e) {
+		// 	if (self.moving == false){
+		// 		var currentCell = $(this)
+		// 		var currentRow = currentCell.parent()
+		// 		var nextCell = currentRow.find('td')[currentCell.index() - 1]
 
-				self.selectCell(nextCell)
-			}
-		})
+		// 		self.selectCell(nextCell)
+		// 	}
+		// })
 
-		boardTableCells.on('swipedown', function(e) {
-			if (self.moving == false){
-				var currentCell = $(this)
-				var boardTable = $('table#game_board_table tr')
-				var currentRow = currentCell.parent()
-				var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
+		// boardTableCells.on('swipedown', function(e) {
+		// 	if (self.moving == false){
+		// 		var currentCell = $(this)
+		// 		var boardTable = $('table#game_board_table tr')
+		// 		var currentRow = currentCell.parent()
+		// 		var nextCell = $(boardTable[currentRow.index() + 1]).find('td')[currentCell.index()]
 
-				self.selectCell(nextCell)
-			}
-		})
+		// 		self.selectCell(nextCell)
+		// 	}
+		// })
 
-		boardTableCells.on('swipeup', function(e) {
-			if (self.moving == false){
-				var currentCell = $(this)
-				var boardTable = $('table#game_board_table tr')
-				var currentRow = currentCell.parent()
-				var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
+		// boardTableCells.on('swipeup', function(e) {
+		// 	if (self.moving == false){
+		// 		var currentCell = $(this)
+		// 		var boardTable = $('table#game_board_table tr')
+		// 		var currentRow = currentCell.parent()
+		// 		var nextCell = $(boardTable[currentRow.index() - 1]).find('td')[currentCell.index()]
 
-				self.selectCell(nextCell)
-			}
-		})
+		// 		self.selectCell(nextCell)
+		// 	}
+		// })
 
 		$(document).on("keyup", function(e) {
 			e.preventDefault()
@@ -109,9 +110,9 @@ var Board = {
 
 	selectStartingCell: function(){
 		var startingRow
-		var goalArray = Stages[Player.stage].levels[Player.level].board
-		var rowIndex = Stages[Player.stage].levels[Player.level].startingCell[0]
-		var cellIndex = Stages[Player.stage].levels[Player.level].startingCell[1]
+		var goalArray = Stages[Game.stage].levels[Game.level].board
+		var rowIndex = Stages[Game.stage].levels[Game.level].startingCell[0]
+		var cellIndex = Stages[Game.stage].levels[Game.level].startingCell[1]
 		var gameBoard = $('#game_board_table tbody tr')[rowIndex]
 		var startingCell = $(gameBoard).find('td')[cellIndex]
 
@@ -140,8 +141,8 @@ var Board = {
 	},
 
 	generateBoardArray: function(){
-		var goalArray = Stages[Player.stage].levels[Player.level].board[0]
-		var stageMap = Stages[Player.stage].levels[Player.level].map[0]
+		var goalArray = Stages[Game.stage].levels[Game.level].board[0]
+		var stageMap = Stages[Game.stage].levels[Game.level].map[0]
 		var boardArray = []
 		var randomShift = Math.floor((Math.random()*3)+1)
 

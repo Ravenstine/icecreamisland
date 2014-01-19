@@ -17,7 +17,7 @@
 //= require jquery.event.swipe.js
 //= require jquery.event.move.js
 //= require jquery.animate-enhanced.min.js
-
+//= require bootstrap.min
 //= require head.js
 //= require player.js
 //= require stages.js
@@ -25,4 +25,6 @@
 //= require goal.js
 //= require stats.js
 //= require game.js
+//= require map.js
+
 
