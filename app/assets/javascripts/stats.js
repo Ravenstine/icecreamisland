@@ -8,13 +8,13 @@ var Stats = {
 		this.time = currentLevel.time
 		this.moves = 0
 
-		this.populateStats(currentLevel)
+		this.populateStats(currentLevel,currentStage)
 		this.clearStats(statsDiv)
 
 		statsDiv.addClass(Stages[Player.stage].nicename)
 	},
 
-	populateStats: function(currentLevel){
+	populateStats: function(currentLevel,currentStage){
 		if (currentLevel.timed == true){
 			$('p#seconds').css('display', 'visible')
 			document.getElementById("timer").innerHTML=this.time
@@ -29,6 +29,11 @@ var Stats = {
 		} else {
 			$('p#moves').css('display', 'none')
 		}
+
+		$('span#stage_name').html(currentStage.name)
+
+		$('span#level_number').html(Player.level + 1)
+		$('span#level_total').html(currentStage.levels.length)
 	},
 
 	clearStats: function(statsDiv){

@@ -40,9 +40,11 @@
 
                                     </script>
 
-                                    <p>Ice Cream Island</p>
-                                    <p><a id="play_button" href="#">Play Game</a></p>
-
+                                    <div class="well button-well">
+                                    <%= image_tag("logo.png", id:"logo") %>
+                                    <p><a id="play_button" class="btn btn-success" href="#">Play Game</a></p>
+                                    <p><a id="" class="btn btn-primary" href="#">How To Play</a></p>
+                                    </div>
     </div>
 
 
@@ -158,6 +160,8 @@
 <div id="stats">
 <p id="seconds">Seconds: <span id="timer"></span></p>
 <p id="moves">Moves: <span id="move_count"></span>/<span id="par"></span></p>
+<p id=""><span id="stage_name"></span></p>
+<p>Level: <span id="level_number"></span>/<span id="level_total"></span></p>
 </div>
 
 
@@ -225,3 +229,11 @@
 
 </div>
 
+
+<div id="stage-panel" class="tab-pane well button-well">
+
+<div id="stage_icon"></div>
+    <p><span id="stage_name"></span></p>
+    <p>Stage: <span id="stage_number"></span>/<span id="stage_total"></span></p>
+    <p><a id="start_button" class="btn btn-success" href="#">Start</a><a id="share_button" class="btn btn-primary" href="#">Share</a></p>
+</div>

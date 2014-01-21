@@ -25,4 +25,5 @@
 //= require goal.js
 //= require stats.js
 //= require game.js
+//= require stagepanel.js
 

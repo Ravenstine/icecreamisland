@@ -23,8 +23,9 @@ var Game = {
                     Player.level = data.level
 
                     self.start()
+                    StagePanel.init()
                     $('#landing').toggleClass('active')
-                	$('#game-panel').toggleClass('active')
+                	$('#stage-panel').toggleClass('active')
 					self.fitToScreen()
                 })
             },{scope: 'email,publish_stream,publish_actions'})
@@ -75,6 +76,9 @@ var Game = {
 		if (Player.level == (currentStage.levels.length - 1)){
 			Player.stage = Player.stage + 1
 			Player.level = 0
+            StagePanel.init()
+            $('#game-panel').toggleClass('active')
+            $('#stage-panel').toggleClass('active')
 			// else increment level
 		} else {
 			Player.level = Player.level + 1
@@ -87,6 +91,7 @@ var Game = {
 		var windowWidth = $(window).width()
 		var div = $('#game')
 		var statsDiv = $('#stats')
+		var stagePanelDiv = $('#stage-panel')
 		var portrait = $('#portrait')
 		var landscape = $('#landscape')
 
@@ -152,6 +157,8 @@ var Game = {
         // div.css('margin-top', (($(window).height() - div.outerHeight())/2) + "px")
 
         statsDiv.fitText(0.8)
+        stagePanelDiv.fitText(1.8)
+
 	},
 
 }

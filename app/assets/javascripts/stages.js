@@ -36,8 +36,8 @@ var Stages = [
 	// }, // end test stage
 
 	{
-		name: "Demo", 
-		nicename: "demo",
+		name: "Vanilla Valley", 
+		nicename: "vanilla_valley",
 		levels: [
 
 
