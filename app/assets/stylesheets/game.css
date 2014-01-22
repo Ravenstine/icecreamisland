@@ -139,6 +139,11 @@ body {
 
 /* Soft Serve Surprise */
 
+body.soft_serve_surprise{
+	background-image: url();
+	background-color: #F8ECC9 ;
+}
+
 #stage_icon.soft_serve_surprise{
 	background-image: url('vanilla_soft_serve_sugar_cone.png');
 }
@@ -166,4 +171,41 @@ body {
 
 .soft_serve_surprise.i3{
 	background-image: url('vanilla_chocolate_swirl_soft_serve_sugar_cone.png');
+}
+
+
+/* Strawberry Fields */
+
+body.strawberry_fields{
+	background-image: url();
+	background-color: #FF3D7F ;
+}
+
+#stage_icon.strawberry_fields{
+	background-image: url('vanilla_soft_serve_sugar_cone.png');
+}
+
+#game_board.strawberry_fields{
+		background-color: #EB9F9F;
+}
+
+#goal_board.strawberry_fields{
+		background-color: #EB9F9F;
+}
+
+#stats.strawberry_fields{
+		background-color: #EB9F9F;
+}
+
+
+.strawberry_fields.i1 {
+	background-image: url('strawberry_soft_serve_sugar_cone.png');
+}
+
+.strawberry_fields.i2{
+	background-image: url('strawberry_sundae.png');
+}
+
+.strawberry_fields.i3{
+	background-image: url('tropical_strawberry_popsicle.png');
 }

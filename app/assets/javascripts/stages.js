@@ -138,6 +138,30 @@ var Stages = [
 		nicename: "strawberry_fields",
 		levels: [
 
+		{
+			timed: true, 
+			time: 71,
+			haspar: true,
+			par: 60, 
+			startingCell: [2,2],
+			board: [
+			[[0,2,0,0,2,0],
+			 [1,3,2,2,3,1],
+			 [0,2,3,3,2,0],
+			 [0,1,3,3,1,0],
+			 [0,0,2,2,0,0],
+			 [0,0,3,3,0,0]]
+			],
+			map: [
+			[["o","r","o","o","r","o"],
+			 ["s","r","r","r","r","s"],
+			 ["o","r","r","r","r","o"],
+			 ["o","r","r","r","r","o"],
+			 ["o","o","r","r","o","o"],
+			 ["o","o","r","r","o","o"]]
+			]
+		},
+
 
 		{
 			timed: true, 

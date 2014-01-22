@@ -14,6 +14,8 @@ var Board = {
 		this.selectStartingCell()
 
 		boardDiv.addClass(Stages[Player.stage].nicename)
+		$('body').removeClass()
+		$('body').addClass(Stages[Player.stage].nicename)
 
 		this.controls(boardTable)
 

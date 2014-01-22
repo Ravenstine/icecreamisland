@@ -31138,3 +31138,1253 @@ Can't verify CSRF token authenticity
   MOPED: 127.0.0.1:27017 UPDATE       database=icecreamapi_development collection=users selector={"_id"=>BSON::ObjectId('52da181162656e43ec000000')} update={"$set"=>{"stage"=>1, "level"=>0}} flags=[]
                          COMMAND      database=icecreamapi_development command={:getlasterror=>1, :w=>1} runtime: 1.5648ms
 Completed 200 OK in 390ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:30:26 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 818ms (Views: 816.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:28 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:30:29 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:30:42 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAGqR0R63TmgkRUVoZBxFYSTZANGoeZAPagqOxwZA7YcAhXjRSBZAn6VgVjZAMToricS1h5p206GR0L3mrESFckpAgN4AaWA1sWTQRaRnahf9phssFth1d5eQMKbTq3j2s2IMbDmgk4m3lq37V6YJwv778kQd8FvJsQSTRxXSiTSnPX6WRRzY8ZD", "userID"=>"1167979450", "expiresIn"=>"5358", "signedRequest"=>"f6nYLBFs3Iw8k9e19KXucp3-eo2e5GxZdsLcyHpXPPw.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUNNM3YyOGk1NGdWRGxXbXZzQTRENVJlQjFPaTlROHo0bk1QcDR3bFVtaWdzRGRwelM4T2xuNU1PYXdGeVJlcmNvUUlUbFFNb1lfVTFFaHZtYTZqOXZYaW1SaWROVlZHcXZrQjhVNlJaVXBubGZrZUtZWFh6eFBLdkszNHFubVRERzdrdFBZNTJNLWpuTERpSEJoOHFCZXc5REhCSUNma1FTbUtFS1RhZF9ldG0xcTNOWk1lYnl3aGtsMW4yMTVPOU9nYWxEQk9oOC0xTzVjYTBNaFFPSHVYOXdyT3E4WkdpcnNiYlFGelFiRm5WQlNzWHU1TnVZQzFtaTExX09UOFNaSWV2RjRtQ0xLLU5LY2NpX2VXUTd1SDdER1laU011TGE3VDRlUFRhMEJ4SDlRU1F3NlFicUhsMW9TTFdTVE9nRSIsImlzc3VlZF9hdCI6MTM5MDM3MjI0MiwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 3.9835ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 287.6358ms
+Completed 200 OK in 1464ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:37:23 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 314ms (Views: 312.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:37:24 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:37:24 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:25 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:26 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:26 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:37:26 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:37:26 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:37:26 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:37:26 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:37:26 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:37:29 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAGZA4plnhDwqJ55tu7ipioZCgZAlkvZBiHIFTNLl13cdqGY1FVq1qKz8o8sCioan1NKsSdZBry5prE5HR0dRMC0Adyv7DLZAH9BzKu1TUOyQZBuVpdilksaEAaPLo9JGRHZAZAKWqtcb2RK9ePwlw2UFox3gWVIxzQYQN1tXpIsZBscObRJaNWBMcZD", "userID"=>"1167979450", "expiresIn"=>"4952", "signedRequest"=>"DlzF5-dyMZ3BLGOanTUbR9ytVzKni_PUo96_YF12Lzc.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUJSZnNvMHRCNk5uMExEWVlvWlNHWHdGaGFGWDJEQXE4bkNmbkNzZnNxdVJRMkhGR1VYV0UwZnlsZFZYWVhrSFBvOERET1laVllsMmtqYVJhM09PaktkcHNveWtRdjZhaEFJZGVFaXhZYlNRX2pCY2tKRFdzM0gxaW5mMmItSWREQ1p3Mmt5YVotdHdKMDhZNy1FcTBiYUJxX29BckNIZ3VYeWRKNFRyRVZ3NTJHanptQnRjOUhWQ2RHZkpsS1M0VlhDVG1wNU9RUDRyR0RTQ3lwbktRS19iWkpfczRDNzY1QVc2OHhVVnlvYTlsWGdqTUFtR1BicUZWOVBENnJRTFc3bWhDOWlWMUVYUGFycVg2VEw2d0dWZHluc0I1V1BGRzNJODlaaUh2WmZ2c204c1k0dlIxZDVhY3BoaDJqcG5sYyIsImlzc3VlZF9hdCI6MTM5MDM3MjY0OCwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.6872ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.9294ms
+Completed 200 OK in 377ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:37:29 -0800
+
+
+Started GET "/assets/strawberry_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:37:34 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 22:37:34 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 22:37:34 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:39:15 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 269ms (Views: 268.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:16 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:39:17 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:39:21 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBANFqonrlYdyqsGzm9mHYPpLsY0SXkZCZBePv84fJXdyzKZA9lfvozAuUFE1zrZCzGSIjZCSzZCWR4fW7HluOLrZCGvDiWBMThBTZAeMXdjH5EPFrNocXU10ddCZBszw5lZBzdJuhhla4GmqwhvftBGYu4hQXeYeIyuh8dCL9rLPJAmcvGrEZAuyT74ZD", "userID"=>"1167979450", "expiresIn"=>"4840", "signedRequest"=>"5dJMK8m682TT8cnrZfZFQHhof5QV2cpsKWi-_yrUuTE.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUE4ZE9TMUlOc2dRa181WHVxRFp5ckR0b2FwSF9fWVpnWDVJVU42YUMycWVaanJGUVBTT05sVDZxSVFnTnlMSXg2V21tTGVIeTV3YWx2Tk81UW1QSDhxZk81ZlBJWjhrZG1abThjR2J3NE1hZ2JKSE4wbmFUQVhueDF1M3Y3UWZ1d2ZxNzA5elFGSXp6OE1GQWZWZ1g1VEVhbURIX1dvZ2MtWHc2TDM5WUV4VXE3ekRmdXE4MTVjMEplNUdad1U2anJTSVVEd1ZGQzJxbUhBeWh5UDIwRGQ3ODY5NC1sT0hNb2lQc2M1MmRVUUVDZXYzXzBnNVpvbzFNN3ltTkpBaE5DRHFRTnVBYnhWaHFiaDFlRmswWW5ZVDU2cGpJdDI0X2NuOG9mdkpYeUM2OTJHNlZ0X1ZaeXlTYksyWUVpTzRLQSIsImlzc3VlZF9hdCI6MTM5MDM3Mjc2MCwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.8710ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.1098ms
+Completed 200 OK in 408ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:39:22 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 22:39:24 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 22:39:24 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:46:49 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 526ms (Views: 525.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:50 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:46:51 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:46:56 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAEwnHN2Wr8lUrjvZBxkUlydIrLKvEi1YZBwnxRwyR7wcVs431BbuMIUbrOLGSBCAheCA96V3zasusVKGci4YU1XwYa0W2yaAbpH9iCDHjYZCelPkJxPoazZC88E0cK8M2vcegoDEFsTSVEgOJOZBhyVnCeOuIhZCHbLkRXDzKTJtnrCxzWQhAZD", "userID"=>"1167979450", "expiresIn"=>"4384", "signedRequest"=>"HbFPteCuIdyjZcvjDQW0m1hl6FoEcJEooftjgR5QmZY.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUURSdDU4LUlydW5CSV9kS2FNX0RkRkhOX3FHLUxDM1VBc01BWW5RSjVRTTIzOTRQU2dPWmFfa2hObkhhTnZqVEpQSVdRRnVqNkRGSVM5VHQ1RzY1WF9ORkVkM0dVSVE5aGFCTTRQb3ZleGtlNDQ0eGZsVUZidGFNc1RkVmhZcldkUUhlaTB1MWhidVJhZTNIbXhXNlNBZVAxZkxCUlVudG1HT2VoTW5fU0I3cXZLMHp6MU10QVNVMUgwMFZIZS1kYWQyMEo3T3RPNUF2eWNwTlYzNlNYMjQ5bnhaYXdUXzM3OTR2SHFoNmFUYU9vZlE3QTJxM1YtamE0NHI1eGdiSEZHUDhOZDZEbTA1WGNxSjNvbWNIN05yQnRZTFhiOTZUdndUWU1QU0VYdGE4Y0xVWFI3Rnpxc3Nnb3FyZzRIMWsxYyIsImlzc3VlZF9hdCI6MTM5MDM3MzIxNiwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.6587ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.1646ms
+Completed 200 OK in 404ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:46:57 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:46:57 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 22:47:00 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 22:47:00 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:48:39 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 308ms (Views: 306.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:40 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:41 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:42 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:42 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:48:42 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:48:42 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:48:42 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:48:42 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:48:42 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:48:46 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAEUA1ZALX4U4M9ZAG91r2XtmShvEihsontqymggcdwnHhx4ZBJzY17xDDI6zx5ZAUZCPFtBZCpnYXycegFZBZBYYf7SzDpKM57q5vGsIrnJ9WjrOofrZCiRKBMc69ST2pGlldD2NP2ZBewvryYFY9loN2ZBZCOuanSyQM4zFTYWRcSeJbCNRA9iLRwAZD", "userID"=>"1167979450", "expiresIn"=>"4274", "signedRequest"=>"EzxrPCflwWFnwpj5ZXL6INUDRMPX5HpKXkF-YzcKrvk.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUJvVVQxeGpVMzBWX1NJdktyRmZtUms5NFRYd0h3ZUVsY2dyTFVvRzJhbGZGZXk2N3EwLUFNa3A3cEpNR0FvaHcxVjE2OEVSMWpXRE96QWJhSFpMTzQwd2ZheklnX05PYzhKbGNkLVVDMUpXUTFQWm5tRlVTMFk5RFJ5TzlOak1HZEEwcS1ZdmZHS2IwbmlUX1hVZ0xWTTFQVjQyUXZYcTM2SUxUSncyNmZ0QWFhNzFUdEotNUdRSDREUlpwa25hNklGTnB5NWI4UmRKbU5KMlQwV3ozZ0tLRE1WZlQ1aFlwQXgtOFpvbnF4WmdSRVZpQXZSajhUaU0xNGRONDAtYkgtYVFoVjY5bU0yaTJfejBBN3llaWJ0NkoxRmVMMGs3RzVCYWtGUURHVXY2cExYc1FVNjRpREZ4Q3g1WURSa05ZayIsImlzc3VlZF9hdCI6MTM5MDM3MzMyNiwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.9900ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.8196ms
+Completed 200 OK in 600ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:48:47 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:48:49 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 22:48:49 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 22:48:50 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:51:15 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 304ms (Views: 302.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:51:16 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:51:16 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:16 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:17 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:51:18 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:51:29 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAKu1yPIf7g40Mt1uBQZB6MtLNj739mB4IwI3l31dRVZCO0hp4PTtPz65kZAmgPkhOZBOXzIUmBUsFwnZB2ITmTO8Y9X9Nkia2vqGZBjy0Q5qMfW8Nv5QvCW2JfUwYZB2HR2WPSMFutN2Ld9YMEHXn8z7reBAa6hkJSZAz5RRvd56pAWgkJeoHN4ZD", "userID"=>"1167979450", "expiresIn"=>"4111", "signedRequest"=>"3ZyAhBzVNeDYTvVQcGZjeapZa68T1bY3O2zXonyxpD8.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUF4REExMXUxdHZ0U0gwbmlkSGV2d3paZGFDUFJMYXV2aWlacDNCWUVJNjFXRENCT2NvMHk0aVluZjY5NDA4ZEhrbnZIZHREOUhmaGFsNm8yTzFMMjJHbmIwUkxlcmR5SnVXUWdzZ244QnVxSVlmVGlCV1U5MXFWejhrekhVci1HYWloMzF5ajZPSWg1Vl9McVdxT3pubTR2Q2hHckEtcDd0M2J5bmZ4emtKRzB6MVg1ZENSOVNkU3BQODl3X0J1OHRfaEtZYTBBRHhXMExxbjQ4MlNqMndYVHNUMEpRTFQ5UTV3NEZLS3RRREN3WVRscGp5UHIxd252T2ktMnRCNTRyc2JObW5ZUEtyX3ItSG14eVpDaWFtUEJoZ2VWRjZCS2lqRWhYTW5BYl92TkwxWkhoN0pxQk0xNnM2YW1uc3lWOCIsImlzc3VlZF9hdCI6MTM5MDM3MzQ4OSwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.8499ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.2353ms
+Completed 200 OK in 382ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:51:30 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:51:30 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 22:51:34 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 22:51:34 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:52:06 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 291ms (Views: 289.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:07 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:52:08 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:52:14 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAO45x8nZAfl6uDZCWzhibONCGfw5Qc30h1AoBw0SCvrTPJMWcc93ZA4k9KoR2BWEj7izG1GvTZAZBOsu2CRhePufcz8JUgjrYCOhSPpRHrWzGVBGW2GEsZC6n6yqOwMWagZCuPtJQob3ru9JWZBfoduzDHzoKiY0SNZBb8zWDV6Y3n6Waj1sKpPsZD", "userID"=>"1167979450", "expiresIn"=>"4070", "signedRequest"=>"C8abIibavPUKEG9LJL3P8Ce6XFV5Q0RWQLfBG2k3Cw0.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUFuc3RuVzBQbWdxejJ0SVdqMGNXT0ptZ3RrRWozQjRyM2ZrZnV5bG1ra2hPT1JUc1hkRzlIbFdCQkdDYkptWHJfUi1yaW5PNkx6Z1VoUzVUUENIVzFnZmJXNmp5aGZfOHc4U3VJMmhockRINjU1YTZsd2IzTVh2WENaUWFkWDVJZWE4ZTUtN0RHWnh1NXJqcmVFRFRwaEE4T0lwZ0dSR3NwOGVWem9jcVBobEtDX0NYYnpSVTBxQkRJRWFMaGVCTmdGc2NJaTFRQktxTlJjQ2RHbEdJcE9lUWJCUUxSUDdCU0liUUtPUFVMYjhsaHkxWnF3YkYyYnR6aUw2aWx3S0t0RnduSVZ6ZXJBM1RndWs0bURwOG5UNEhSTXZjb0RzUWdscm9vdG1qU1Z1RXkxVU95UzFJak1HWXFiYzBqc2RyNCIsImlzc3VlZF9hdCI6MTM5MDM3MzUzMCwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 2.2835ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.3944ms
+Completed 200 OK in 397ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:52:15 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:52:15 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 22:52:16 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 22:52:16 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 22:59:01 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 283ms (Views: 281.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 22:59:01 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:59:01 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 22:59:02 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 22:59:03 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 22:59:03 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:59:03 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 22:59:05 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAFOQJTmtflYKasAlthrsP0fmtIgb5Lq9EWzVz7ZBDjAIMfYQpSjXwDqzXaEK4CrW63oabFiZBvDVrvZBuqwSO03JrXNcAfgsaxJlbjqIlZBXoolCZBPnh7V0UDg2ep4nXfErxOcLr6r73zDoDFESNtuxeKMMghTDRDgn0ywhkPSyZBZAONhgwoZD", "userID"=>"1167979450", "expiresIn"=>"3655", "signedRequest"=>"b8X_JYSBv2CHPOj_bisq3oxeaL-3Fo-oez-nyDrFgWo.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUI1RjMzZVBwcF9RUkFvZ3NxOERzdDNtT2NINm5QVnE2YmhpYnBRU25hR0NnMjQwLWJyaUxtSVphTXhpcktIaG9tSnNrZU1Mb2RNbF9odEw0cUdtTHN1c1ZnWHdsQjF6TjV5ZTZhOXFUTF9tOUd3SkUyTzVaV2RnSmhaTXBISGhSOVc0R0xMY2pyVFV5bVNDTzMxeS1rZWVmOTRYYl9ZTG4zRXZxN2dwNUU0aDY2b1ZOY2ZxWmFTVTVQNjJiVmJDTEthZWZwWHc3S0U0NmRBS2x2UER6MWs3WWYwMkZOX0hudHF1Rld5SV9UcnI0MURTazloc1hVYTJlMW9GYWhnYkhPbTcxVlhhUWRHVUhRYjJiU3RKakNrQUlSYlZDU0tpcVkyOWo1Nk5UN19Oc09YM3FMSlQ3Mk8tSkVoUVZ5aWdnUSIsImlzc3VlZF9hdCI6MTM5MDM3Mzk0NSwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.9549ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.9838ms
+Completed 200 OK in 380ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 22:59:06 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 22:59:06 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 22:59:08 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 22:59:08 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 23:00:19 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 267ms (Views: 265.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:20 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:00:21 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 23:00:24 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBALSrZAZByg2CWkigFTYT7GLjGZAs3rIgO8WEyhirxoF3bhHZAlnv5H7hJBQZASiKrPfOe2Yz5SSGkIxC5fcoyFTypwkqp4v6Ew9Dz94T1wGv5SHthzEKZAkZADfi7RB2W6SCsl873jXGoYjnZC6ZBwZAKNd5D3MJE89PjmKyZBjYEqWK8znh0BDxa0ZD", "userID"=>"1167979450", "expiresIn"=>"7177", "signedRequest"=>"mBW2kCIVfHy-XIaXOC3Fk4tJQWZuyZjgcaaSEItaJwU.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUFSNVB1YXFCVENqRjFDM0hTTmhFdlppZG53MWhZeFVySjR4WTA3ZUNvczV6TkFiRFB6a0tlRmdOOEZjR1JaOVRTWEZtU3NrNEYzWC0wLXZaT2Z4Y2Zla1RlSE5xVkZKNEMySk5kYlhOZFJVTHJzeEt0QXAyWmtCVkVCY0JBMHZBVnRFVGE0bWlmSm5BY05CYUM2Vi1CZk5OejJnNXpqUWRFbEFlZlo3TXlFQktEOEZ5YWZKZGd4SFFvdTFNWGFvNUNibk96bHI0SUZNZU9tbDR5TjZJanlQMWNXXzBaaHFNejJXUEZvSHgxdXZvVm9nbE84MnJ5SE1pLTJMd0ZvZnhlVm1IaGVRUXFiaTljS1l6TUhYTDhtYUdOWV93ZGxrYTl0TjFCUTBQekgwMWVZMXF2V1VVREtUbWNsSDZxSTBIcyIsImlzc3VlZF9hdCI6MTM5MDM3NDAyMywidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 2.6698ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.0005ms
+Completed 200 OK in 386ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:00:24 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:00:24 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 23:00:27 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 23:00:27 -0800
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.1627ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"stage"=>1}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.6049ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=icecreamapi_development collection=users selector={"_id"=>BSON::ObjectId('52da181162656e43ec000000')} update={"$set"=>{"stage"=>0}} flags=[]
+                         COMMAND      database=icecreamapi_development command={:getlasterror=>1, :w=>1} runtime: 1.6799ms
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 23:01:41 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 257ms (Views: 255.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:42 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:01:43 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 23:01:46 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAKdg0vJSakYSRiLCHt3fWQ3IHVpyQeEHXr0p9pa5EaMWRXR36e00YgEmQjupx9VzLYjf0llxKMOPGHcZCdHUNcZAog6pZCWAAzy5SSJKOSrmTGacQFhTbEQubWkbJ3lZAtJ7tthIm5q9l2kfETmF7q6ftQPgQwiNfuZC7qE2jObC0cYuRTr4ZD", "userID"=>"1167979450", "expiresIn"=>"7095", "signedRequest"=>"4TSWGpWSEcCBlvhy_YVBpbtWyBOTs-taIZO0h6n4A-U.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUI5Q2NacVRWRW1xVE1pNldYaUtMalNWZUhtcERXMmFfUlFpSHZiaEJNZDhpODlfbU9OWERqaEVpdXFCalNQc05TQVIxQzU0RVVyNEtLQUM3eS05T3BjUEhzU0JtNGdhT0ZXdlFoUjI0d1RfUFBPUFNhb1BhTmMxanY2YkFMZ01CN2VJLTZWbEllVlVYYkZLQmRnNEc4WVJ4Zl9EdVI0NWl3NnlSaVpkQjZ2ZG5rSzgybG9DelZPa1FRNFJqMlBYZnRjNGZIVmFRcXhxN3VfREtjOGR1UXFkWVliNGtuWUFGX0NGV1dPandlbHpIMjFZTS1YZ1U4SkZoRWZkSDhuVHA4bGxnQXVqNlZraFJvZzVtejltWnNxQW41eEhNM2o3VXhQSEo5MG9zMGlJQzZ2eDB5Ul9MTm42Q0VVak11eHNXSSIsImlzc3VlZF9hdCI6MTM5MDM3NDEwNSwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.8604ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.2534ms
+Completed 200 OK in 719ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:01:48 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:01:49 -0800
+
+
+Started GET "/assets/chocolate_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:01:49 -0800
+
+
+Started GET "/assets/vanilla_chocolate_swirl_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:01:49 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 23:03:10 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 242ms (Views: 240.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:11 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:03:12 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 23:03:15 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBALHERdftHwLcWOKVuxopSsjVJZB1M99RbByafFKIqZC68q0LIha1lyJ1Cq5kYG1TVhqQabaQ4pdXZAalfnUHUoZBBOVkAH5DJyUY4jndqtet6WAPdvgm9Fg3ZBa3f9Mx6mT3SMiJhENc82eaGsdTKZCeNlYxDSdRp2ZBw6R7wVjFoQZBWUBYguIZD", "userID"=>"1167979450", "expiresIn"=>"7006", "signedRequest"=>"bK1Vn5kh79x7zizcT11SXpMi9YVjM6w27WsnCGM8NdI.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUURYSm9TS3VGakd5THB4NTBnY05XMTlRcFVyTnNWT0RaRXZod2d6TFg1eWRMbU9nUzVPYWNjTDRTLUJaMmJXQkJtdFctcXpGZllzUXNja2laOHBJdW1JbF9GcXhmZ3lDTTFubUluMG9LdzY0THl1S3Z6dzBaenFyTVBTa3pMaTFQNzFSZHpmZDlSWmtkbWtpRVA4ZXF4NmFsOFg2TDNnWjQwenIxZE12VTQxMm5nWEpoSTFGbXZtZ0xnd2V6bUNjVnk4b3B2bzc2ckMxZGlOWG9NY3A3VVhhNTlQTDg0cFpDR09nUXIwRTNWZzVDNmZac21QZ0RzOUtCSTFObGcyUG05aTZiWXJBaHg2c2llbFI4RDNhd1NsY21udTU0QXhJSk15TUxuV19vdXk1eGFoaWZnWmdvQ3FveWE5QUtJNGV6TSIsImlzc3VlZF9hdCI6MTM5MDM3NDE5NCwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 2.1784ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.1779ms
+Completed 200 OK in 379ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:03:15 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:03:15 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:03:18 -0800
+
+
+Started GET "/assets/chocolate_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:03:18 -0800
+
+
+Started GET "/assets/vanilla_chocolate_swirl_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:03:18 -0800
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.1575ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"stage"=>0}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.7570ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=icecreamapi_development collection=users selector={"_id"=>BSON::ObjectId('52da181162656e43ec000000')} update={"$set"=>{"stage"=>1}} flags=[]
+                         COMMAND      database=icecreamapi_development command={:getlasterror=>1, :w=>1} runtime: 1.8439ms
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 353ms (Views: 351.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:42 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 23:12:43 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 23:12:44 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:12:44 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 23:12:48 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAFyjUbhw5C29VrdsJGJ2ucdKUq2lFGPfJOkM121TMQFMww8vXTe5nMlk9u7B5InxpJfPcolLpI3pOaeplVUWNGDDJDqNKtXNk3pv2RdUadDbzxMRezOVV0VllgjYKScU3lUES3JZARGRQZCjQpN89W3WvOUyCKrAFJZCpmIX7yJP3n5CnMZD", "userID"=>"1167979450", "expiresIn"=>"6432", "signedRequest"=>"v2a36SjvajZArJQBNvdLV0IEGnG406M5WxkPLgOG4Lg.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUJ3c0k0WGVXVkxpUHZoYUxLWUVIV05pazl5R1dtYmZLT3hQNm16cVdTcnRrZWZFUks3ZHJraGxWNVZPU2lCOS1uelREbV9LVzM5SlpKa25nY015THlXOVNiVjZRLUdUUFlXdWZlb0RySUxXV2hLWl84bTFGLWdNTWhJSDNoYzJyUF81MkRjV1ZRNUN3dHBYd09nbFhwUGlWZlJmdWczZ2pza204V2Fsa3gyT3RSRDBXMXZxMnFzZVdkanNUeHloRTdubUxDOEp2WE5mTy1SMnI4NHIzc3VkUURnU2VXak8tcV9xcE1qU0FKUnYwQV9ja2U5UGdVS1haYWhIWEZ4RFBuVGo5bmxJcVVPM0x6VGpmcWZYWEdTV1VvMjd2U2tYS1FGb2R1UktDdDJ5VFhNMVVNVEYyWERvSGk1dld1RVgyRSIsImlzc3VlZF9hdCI6MTM5MDM3NDc2OCwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 2.4163ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.0224ms
+Completed 200 OK in 375ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:12:49 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:12:49 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 23:12:52 -0800
+
+
+Started GET "/assets/strawberry_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:12:52 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 23:12:52 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 23:14:00 -0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 374ms (Views: 372.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/jquery-2.0.3.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/jquery.fittext.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/jquery.event.swipe.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/jquery.tap.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/jquery.event.move.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/jquery.animate-enhanced.min.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/head.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/stages.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/board.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/goal.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/stats.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:01 -0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:02 -0800
+
+
+Started GET "/assets/stagepanel.js?body=1" for 127.0.0.1 at 2014-01-21 23:14:02 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-01-21 23:14:02 -0800
+
+
+Started GET "/assets/blank.png" for 127.0.0.1 at 2014-01-21 23:14:02 -0800
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:14:02 -0800
+
+
+Started GET "/assets/island.jpg" for 127.0.0.1 at 2014-01-21 23:14:02 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 23:14:04 -0800
+Processing by UsersController#create as JSON
+  Parameters: {"accessToken"=>"CAADksSJA68MBAHaJNuVxuSZCRdZAjNVQjAUCPj9etHAE7aS6aXDLjmkvklSQ0R7P3PNIhw7fjtK34gSydL7XSgGSyLpxD1PRugC9wJgg2cCjvq3BZBxGaGFu0yhl1mWvwffnVGxSJZBBZBnZAncw4H18X4RV6HhphjEkyTiMto11iXwrMGR17qCI4gQgnbWXAZD", "userID"=>"1167979450", "expiresIn"=>"6356", "signedRequest"=>"-H6fKOtX4Z6Nm5Du4-HaXnUNEAwOq6h261d_OLJgVCc.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUR0NE9LNkFhc3RXVWNfZXFZVG5mNnEzcjgwdDBYT3RyUnh1Zm5KUW10RWp2Y3ZRLU1iV2t0SU1FM1l3aGhXQ2ZMLWI1azhjblRjWE5PbEdndm0xYWdKdjJ1TkhweWcwRGJJRnoyTGNmM0tFaG9NWi1DZE1WcWo5cDhxYlhCdEVkTzNIQWFOamdNcGtYN2t4Z3N5aDB1QUhDa184RGotOTFnYmtfZGlkZkJ5SzVpM09tampJcUFqUEJWV2dBanJRUjhTMk55N0lpc3BXbElrVTg0RG5VRTZIVDB3ZDljVmNtMEZ0VFZ4VlNsbG5RZ3hIUjBvazQ2TVNFYXQ2NWJESGp0bk1PaHJiTjFVU1lvLUdib0JWSHVFei05Zmkza212d3VhTDNCS1pXclhfOHJSUGZTS1ZJdERUOWNrOVVKV0dtdyIsImlzc3VlZF9hdCI6MTM5MDM3NDg0NCwidXNlcl9pZCI6IjExNjc5Nzk0NTAifQ"}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 2.4969ms
+  MOPED: 127.0.0.1:27017 QUERY        database=icecreamapi_development collection=users selector={"$query"=>{"facebook_id"=>"1167979450"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 2.1494ms
+Completed 200 OK in 364ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-01-21 23:14:05 -0800
+
+
+Started GET "/assets/vanilla_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:14:05 -0800
+
+
+Started GET "/assets/strawberry_sundae.png" for 127.0.0.1 at 2014-01-21 23:14:07 -0800
+
+
+Started GET "/assets/strawberry_soft_serve_sugar_cone.png" for 127.0.0.1 at 2014-01-21 23:14:07 -0800
+
+
+Started GET "/assets/tropical_strawberry_popsicle.png" for 127.0.0.1 at 2014-01-21 23:14:07 -0800
