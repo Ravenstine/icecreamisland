@@ -26,7 +26,7 @@ var Board = {
 		// Remove existing event handlers to prevent duplicates.
 		boardTable.off()
 		boardTableCells.off()
-		// $(document).off()
+		$(document).off("keyup")
 
 
 		boardTable.on('tap', 'td', function(){
@@ -158,6 +158,9 @@ var Board = {
 				} else if(stageMap[rowIndex][cellIndex] == "s") {
 					/* apply random shift to board */
 					var shiftedCellValue = (((goalArray[rowIndex][cellIndex]) + randomShift) % 3) + 1
+					if (goalArray[rowIndex][cellIndex] == shiftedCellValue){
+						shiftedCellValue = ((shiftedCellValue + 1) % 2) + 1
+					}
 					newRow.push(shiftedCellValue)
 				}
 			})
@@ -169,11 +172,16 @@ var Board = {
 	populateBoardTable: function(){
 		var self = this
 		var gameBoardCells = $('table#game_board_table td')
-		var simpleBoardArray = [];
+		var simpleBoardArray = []
 		simpleBoardArray = simpleBoardArray.concat.apply(simpleBoardArray, self.boardArray)
 		$(simpleBoardArray).each(function(cellIndex, cell){
-			$(gameBoardCells[cellIndex]).addClass("demo")
+			$(gameBoardCells[cellIndex]).addClass(Stages[Player.stage].nicename)
+			if (cell == 9){
+				$(gameBoardCells[cellIndex]).addClass('blank')
+
+			} else {
 			$(gameBoardCells[cellIndex]).addClass("i" + cell.toString())
+		}
 		})
 	},
 
@@ -204,7 +212,7 @@ var Board = {
 		var nextRowIndex = nextRow.index()
 
 		// If the selected cell isn't blank and is adjacent to the last cell...
-		if (this.boardArray[nextRowIndex][nextCellIndex] != 0 && this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true && self.moving != true){
+		if (this.boardArray[nextRowIndex][nextCellIndex] != 0 && this.boardArray[nextRowIndex][nextCellIndex] != 9 && this.isAdjacent(currentRowIndex,nextRowIndex,currentCellIndex,nextCellIndex) == true && self.moving != true){
 			
 			// Place lock on movements until the array value for the new cell is toggled.
 			// This is to prevent erroneous calculations from using an outdated array.

@@ -29,7 +29,7 @@ var Goal = {
 		var tableCells = $('table#goal_board_table td')
 		simpleGoalArray = simpleGoalArray.concat.apply(simpleGoalArray, self.goalArray)
 		$(simpleGoalArray).each(function(cellIndex, cell){
-			$(tableCells[cellIndex]).addClass("demo")
+			$(tableCells[cellIndex]).addClass(Stages[Player.stage].nicename)
 			$(tableCells[cellIndex]).addClass("i" + cell.toString())
 		})
 	}

@@ -6,6 +6,7 @@ var StagePanel = {
 		var stageNameSpan = $('#stage-panel #stage_name')
 		var stageNumberSpan = $('#stage-panel #stage_number')
 		var stageTotalSpan = $('#stage-panel #stage_total')
+        var shareButton = $('#share_button')
 
 		stageIcon.removeClass()
 		stageIcon.addClass(Stages[Player.stage].nicename)
@@ -15,6 +16,12 @@ var StagePanel = {
 		stageNumberSpan.html(Player.stage + 1)
 
 		stageTotalSpan.html(Stages.length)
+
+        if (Player.stage == 0){
+           shareButton.css('display', 'none')
+        } else {
+           shareButton.css('display', '')
+        }
 
         $('#start_button').on('tap', function(){
 
@@ -40,6 +47,8 @@ var StagePanel = {
         		})
         	})
         })
+
+        Game.fitToScreen()
 
     }
 

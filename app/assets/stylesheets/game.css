@@ -112,115 +112,58 @@ body {
 }
 
 
-/* Vanilla Valley */
 
-#stage_icon.vanilla_valley{
-	background-image: url('vanilla_flower.png');
-}
-
-#game_board.vanilla_valley{
+#game_board, #goal_board{
 		display: inline-block;
 		padding: 2%;
 		float: right;
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
 		border-radius: 10px;
-		background-color: #F7F6E4;
 		-moz-box-shadow: inset 0 0 10px #000000;
 		-webkit-box-shadow: inset 0 0 10px #000000;
 		box-shadow: inset 0 0 10px #000000;
 }
 
-#goal_board.vanilla_valley{
-		display: inline-block;
-		padding: 2%;
-		float: right;
+#stats{
+		width: 100%;
+		height: 100%;
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
 		border-radius: 10px;
+		-moz-box-shadow: inset 0 0 10px #000000;
+		-webkit-box-shadow: inset 0 0 10px #000000;
+		box-shadow: inset 0 0 10px #000000;
+}
+
+
+/* Soft Serve Surprise */
+
+#stage_icon.soft_serve_surprise{
+	background-image: url('vanilla_soft_serve_sugar_cone.png');
+}
+
+#game_board.soft_serve_surprise{
+		background-color: #F7F6E4;
+}
+
+#goal_board.soft_serve_surprise{
 		background-color: #F2D7A8;
-		-moz-box-shadow: inset 0 0 10px #000000;
-		-webkit-box-shadow: inset 0 0 10px #000000;
-		box-shadow: inset 0 0 10px #000000;
 }
 
-#stats.vanilla_valley{
-		width: 100%;
-		height: 100%;
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
-		border-radius: 10px;
+#stats.soft_serve_surprise{
 		background-color: #FCC584;
-		-moz-box-shadow: inset 0 0 10px #000000;
-		-webkit-box-shadow: inset 0 0 10px #000000;
-		box-shadow: inset 0 0 10px #000000;
 }
 
 
-.vanilla_valley.i1 {
-	/* strawberry sundae */
-	background-image: url('strawberry_sundae.png');
+.soft_serve_surprise.i1 {
+	background-image: url('vanilla_soft_serve_sugar_cone.png');
 }
 
-.vanilla_valley.i2{
-	/* chocolate soft serve */
-	background-image: url('chocolate_soft_serve.png');
+.soft_serve_surprise.i2{
+	background-image: url('chocolate_soft_serve_sugar_cone.png');
 }
 
-.vanilla_valley.i3{
-	/* tropical strawberry popsicle */
-	background-image: url('tropical_strawberry_popsicle.png');
+.soft_serve_surprise.i3{
+	background-image: url('vanilla_chocolate_swirl_soft_serve_sugar_cone.png');
 }
-
-
-
-
-
-/* demo2 */
-
-
-
-#game_board.demo2{
-		display: inline-block;
-		padding: 2%;
-		float: right;
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
-		border-radius: 10px;
-		background-color: #F7F6E4;
-		-moz-box-shadow: inset 0 0 10px #000000;
-		-webkit-box-shadow: inset 0 0 10px #000000;
-		box-shadow: inset 0 0 10px #000000;
-}
-
-#goal_board.demo{
-		background-color: rgba(255, 255, 255, 0.5);
-		display: inline-block;
-		padding: 1%;
-		float: left;
-}
-
-#stats.demo{
-		background-color: rgba(255, 255, 255, 0.5);
-		/*display: inline-block;*/
-		/*padding: 1%;*/
-		width: 100%;
-		height: 100%;
-}
-
-
-.demo.i1 {
-	/* strawberry sundae */
-	background-image: url('strawberry_sundae.png');
-}
-
-.demo.i2{
-	/* chocolate soft serve */
-	background-image: url('chocolate_soft_serve.png');
-}
-
-.demo.i3{
-	/* tropical strawberry popsicle */
-	background-image: url('tropical_strawberry_popsicle.png');
-}
-

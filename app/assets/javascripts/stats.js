@@ -7,11 +7,11 @@ var Stats = {
 		var currentLevel = currentStage.levels[Player.level]
 		this.time = currentLevel.time
 		this.moves = 0
-
 		this.populateStats(currentLevel,currentStage)
 		this.clearStats(statsDiv)
 
 		statsDiv.addClass(Stages[Player.stage].nicename)
+		Game.fitToScreen()
 	},
 
 	populateStats: function(currentLevel,currentStage){

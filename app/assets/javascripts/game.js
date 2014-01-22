@@ -38,6 +38,7 @@ var Game = {
 		Board.init()
 		Goal.init()
 		Stats.init()
+		self.fitToScreen()
 	},
 
 	success: function(){
@@ -47,6 +48,7 @@ var Game = {
 		Goal.init()
 		Stats.init()
 		Board.init()
+		StagePanel.init()
 	},
 
 	fail: function(){
@@ -79,6 +81,7 @@ var Game = {
             StagePanel.init()
             $('#game-panel').toggleClass('active')
             $('#stage-panel').toggleClass('active')
+
 			// else increment level
 		} else {
 			Player.level = Player.level + 1
