@@ -61,7 +61,7 @@ development:
 test:
   sessions:
     default:
-      database: icecreamapi_test
+      database: icecreamisland_test
       hosts:
         - localhost:27017
       options:
@@ -70,3 +70,13 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
+
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        # consistency: :strong
+        max_retries: 30
+        retry_interval: 1
+        timeout: 30

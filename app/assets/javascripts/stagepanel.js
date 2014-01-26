@@ -27,6 +27,7 @@ var StagePanel = {
 
                     $('#stage-panel').toggleClass('active')
                 	$('#game-panel').toggleClass('active')
+                    Game.fitToScreen()
         })
 
         $('#share_button').on('tap', function(){

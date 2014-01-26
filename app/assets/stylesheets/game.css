@@ -81,7 +81,9 @@
    user-select: none;
 }
 
-
+#stats p {
+	margin-left: 10px;
+}
 
 
 /* ICE CREAMS */

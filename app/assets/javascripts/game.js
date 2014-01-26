@@ -159,7 +159,7 @@ var Game = {
 		div.css('width', width + "px")
         // div.css('margin-top', (($(window).height() - div.outerHeight())/2) + "px")
 
-        statsDiv.fitText(0.8)
+        statsDiv.fitText(1.2)
         stagePanelDiv.fitText(1.8)
 
 	},
